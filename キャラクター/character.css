@@ -1,0 +1,513 @@
+:root {
+  --bgCol: #000000;
+  --bg:url("");
+  --bg2:url("");
+  --setPic: 10%;
+}
+
+html {
+  font-size: 1vw;
+  background-color:  #AAA79B;
+  color: #3F3515;
+}
+
+header{
+  width: 100%;
+  text-align: center;
+}
+
+body {
+  font-family:'Amatic SC','游明朝','Noto Serif JP',serif;
+  margin: 0%;
+  text-align: center;
+  margin-bottom: 15%;
+}
+
+li{
+  font-size: 1vw;
+  line-height: 1.5;
+}
+p{
+  font-size: 1.2vw;
+  line-height: 1.5;
+}
+h1 {
+  font-size: 3.5vw;
+  font-weight: lighter;
+  letter-spacing: 0.5em;
+  margin: 0;
+}
+
+h2{
+  font-weight:inherit;
+  font-size: 2vw;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+h3{
+  font-size: 1.2vw;
+  letter-spacing: 2em
+}
+
+a{
+  line-height: 2;
+  letter-spacing: 0.2em;
+}
+
+img{
+  width: 100%;
+}
+/*ロードアクション*/
+#loading {
+  color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #272F2E;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/*ロード画面閉じる*/
+.loaded {
+  animation: bgAnime .4s linear .5s forwards;
+}
+@keyframes bgAnime {
+  0% {
+  opacity: 1;
+  transform: translateY(0);
+}
+100% {
+  opacity: 1;
+  visibility: hidden;
+  transform: translateY(-100vh);
+}
+opacity: 0;
+animation: fadein 1s ease forwards;
+
+}
+.no1{
+  margin: 3vw 5vw;
+  display: flex;
+}
+
+.no1-l{
+  width: 40%;
+  text-align:center;
+  margin-right: 1vw;
+  border: solid 2px #3F3515;
+}
+.no1-r{
+  width: 60%;
+  margin: 0 0 0 1vw;
+}
+.no2-1{
+  text-align: center;
+  margin: 1vw;
+  vertical-align: middle;
+  display: flex;
+}
+
+.no3{
+  text-align: left;
+  margin-top: 1vw;
+  display: flex;
+  height: auto;
+}
+
+.no3-2{
+  padding:0vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.no3-2 div{
+  border: solid 2px rgba(255, 255, 255, 0.5);
+  padding: 1vw;
+}
+
+.no4{
+  margin: 3vw 5vw;
+  display: flex;
+  justify-content: space-between;
+}
+.no4 div{
+  width: 50%;
+  border: solid 2px var(--bgCol);
+}
+.no4 p{
+  font-family: 'New Tegomin', serif;
+}
+.no4-1{
+  background-color: var(--bgCol);
+  color: #AAA79B;
+  margin-bottom: 1vw;
+}
+.line{
+  background-image:var(--bg);
+  background-size: cover;
+  background-position: center;
+}
+
+.lines{
+  animation: kuji 0.4s 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes kuji{
+    0%{
+      background-image:url(../images/kujimeLine.png);
+      background-size: contain;
+      background-position: center;
+    }
+    50%{
+      background-image:url(../images/kujimeLine2.png);
+      background-size: contain;
+      background-position: center;
+    }
+    100%{
+      background-image:url(../images/kujimeLine3.png);
+      background-size: contain;
+      background-position: center;
+    }
+}
+
+.pv{
+  background-color: var(--bgCol);
+  margin-left: 1vw;
+  border: solid 2px #3F3515;
+}
+.status{
+  height: auto;
+  margin: 0;
+  padding: 1vw;
+  border: solid 2px #3F3515;
+  clear: both;
+}
+.status ul{
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0;
+  margin-bottom: 1vw;
+  width: 100%;
+}
+
+.status li{
+  text-align: left;
+  width: 10vw;
+  list-style: none;
+
+  margin: 0 1vw;
+  display: inline-block;
+}
+.status p{
+  margin: 0;
+}
+/* ハンバーガー */
+.btn-burger {
+  display: none;
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+  border-bottom: dashed 2px #3F3515;/*点線*/
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a:hover{
+  background-color: black;
+  color: white;
+}
+
+.nav-list a{
+  display: block;
+  text-decoration: none;
+  padding: 0.5vw 2vw;
+  color: #3F3515;
+  font-size: 1.5vw;
+  letter-spacing: 0.2em;
+}
+
+.nav-toggle{
+  display: none;
+}
+#now a{
+  color: white;
+  background-color: black;
+}
+@media screen and (max-width: 480px){
+  body{
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+  h1{
+    font-size: 5vw;
+  }
+  h2{
+    font-size: 4vw;
+  }
+  p,a{
+    font-size: 3vw;
+  }
+
+  .no1{
+    margin: 3vw 5vw;
+    display: block;
+  }
+
+  .no1-l{
+    padding: 1vw;
+    width: auto;
+    margin-right: 0vw;
+  }
+  .no1-r{
+    width: 100%;
+    margin: 0vw;
+  }
+  .no2-1{
+    margin: 3vw 0;
+    display: flex;
+  }
+
+  .no3{
+    margin-top: 5vw;
+    display: block;
+    height: auto;
+  }
+
+  .no3-2 div{
+    margin-top: 3vw;
+    padding: 1vw;
+  }
+
+  .no4{
+    margin: 10vw 5vw;
+    display: block;
+  }
+  .no4 div{
+    width: 100%;
+    margin-bottom: 5vw;
+  }
+  .no4 p{
+    font-family: 'New Tegomin', serif;
+  }
+  .no4-1{
+    margin-bottom: 1vw;
+  }
+
+  .lines{
+    background-image:url(../images/kujimeLine.png);
+    background-size: cover;
+    background-position: center;
+    animation: none;
+  }
+
+  .pv{
+    margin: 0vw;
+  }
+  .status{
+    height: auto;
+    margin: 0;
+    padding: 1vw;
+    border: solid 2px #3F3515;
+    clear: both;
+  }
+
+  .status li{
+    width: 22vw;
+  }
+  /*ハンバーガーアイコン*/
+  .btn-burger {
+    z-index: 2;
+    cursor: pointer;
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0vw;
+    right: 0px;
+  }
+
+  /*ハンバーガー三本線*/
+  .icon, .icon:before, .icon:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    height: 1px;
+    width: 30px;
+    background-color: black;
+    border-radius: 2px;
+    display: block;
+    content: '';
+    cursor: pointer;
+    margin: auto;
+  }
+
+  /*三本線の間隔*/
+  .icon:before {
+    top: 20px;
+  }
+  .icon:after {
+    top: -20px;
+  }
+
+  /*チェックボックス非表示*/
+  .nav-toggle {
+    display: none;
+  }
+
+  /*アイコンをクリックしたら*/
+  .nav-toggle:checked ~ .btn-burger .icon {
+    background: transparent;
+  }
+  .nav-toggle:checked ~ .btn-burger .icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+    background-color: white;
+  }
+  .nav-toggle:checked ~ .btn-burger .icon:after {
+    transform: rotate(45deg);
+    top: 0;
+    background-color: white;
+  }
+
+  .icon,
+  .icon:before,
+  .icon:after {
+    transition: all .8s;
+  }
+
+
+  .nav {
+    border-bottom: none;
+    position: absolute;
+    top: 0%;
+  }
+
+  .nav-list {
+    position: relative;
+    background-color: gray;
+    list-style: none;
+    display: none;
+    margin: 0;
+    padding-top: 30%;
+    height: 100%;
+
+    z-index: 1;
+  }
+
+  .nav-list li {
+    width: 100%;
+    height: 10%;
+  }
+
+  .nav-list a {
+    font-size: 5vw;
+  }
+  .nav-toggle:checked ~ .nav .nav-list {
+    display: block;
+  }
+}
+
+
+.skew {
+  animation: skew 3s infinite;
+}
+@keyframes skew {
+  0% {
+    transform: none;
+  }
+  33% {
+    transform: none;
+  }
+  33.3% {
+    transform: skewX(30deg);
+  }
+  33.6% {
+    transform: skewX(-30deg);
+  }
+  33.9% {
+    transform: none;
+  }
+  66% {
+    transform: none;
+  }
+  66.3% {
+    transform: skewX(5deg);
+  }
+  66.6% {
+    transform: skewX(-5deg);
+  }
+  66.9% {
+    transform: none;
+  }
+  77% {
+    transform: none;
+  }
+  77.3% {
+    transform: skewX(15deg);
+  }
+  77.6% {
+    transform: skewX(-15deg);
+  }
+  77.9% {
+    transform: none;
+  }
+}
+@keyframes fadein {
+  100% {  opacity: 1;}
+}
+
+
+/*以下はボタンのデザイン*/
+.btn2 {
+  display: inline-block;
+  width: 10em;
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 1px black;
+  border-bottom: solid 1px  black;
+  text-decoration: none;
+  color: black;
+}
+
+
+.btn2:before, .btn2:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width:1px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+  transition: .3s;
+}
+.btn2:before {
+  left: 7px;
+}
+.btn2:after {
+  right: 7px;
+}
+.btn2:hover:before {
+  top: 0px;
+  left:0;
+  height: 100%;
+}
+.btn2:hover:after {
+  top: 0px;
+  right: 0;
+  height: 100%;
+}
