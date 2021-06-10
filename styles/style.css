@@ -79,9 +79,6 @@ h2 {
   visibility: hidden;
   transform: translateY(-100vh);
 }
-opacity: 0;
-animation: fadein 1s ease forwards;
-
 }
 
 .nav {
