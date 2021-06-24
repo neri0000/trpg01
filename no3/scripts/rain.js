@@ -53,16 +53,17 @@ function start() {
   function printView() {
     var img = new Image();
     if (view == 0) {
-      img.src = "../../picture/main_bg.png";
+      var img = new Image();
+      img.src = "../pic3/1-1.jpg";
       ctx.fillStyle = "gray";
       ctx.fillRect(0, 0, width, height);
       moveBtR();
       moveBtR();
       moveBtL();
     } else if (view == 1) {
-      img.src = "../../picture/main_bg.png";
-      ctx.fillStyle = "red";
-      ctx.fillRect(0, 0, width, height);
+      var img = new Image();
+      img.src = "../pic3/1-1.jpg";
+      ctx.drawImage(img, 0, 0);
       moveBtR();
     } else if (view == 2) {
       img.src = "../../picture/main_bg.png";

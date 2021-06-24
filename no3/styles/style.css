@@ -83,4 +83,27 @@ h2 {
   text-align: center;
 }
 
+.map{
+  background-color: #FFFFFF;
+  width: 50vw;
+  height: 50vw;
+
+  background-image: url("../pic3/map.jpg");
+  background-size:cover;
+  background-position:bottom;
+  text-align: center;
+  margin: auto;
+}
+
+a.a{
+  position:relative;
+  font-size: 4vw;
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+}
+
+
 
