@@ -14,6 +14,7 @@ function start() {
   ctx.fillRect(0, 0, width, height);
   moveBtR();
   moveBtL();
+    
 
   canvas.addEventListener("mousedown", mouseDownHandler, false);
   function mouseDownHandler(e) {　//マウスがクリックされたら動く関数
@@ -53,23 +54,29 @@ function start() {
   function printView() {
     var img = new Image();
     if (view == 0) {
-      var img = new Image();
-      img.src = "../pic3/1-1.jpg";
       ctx.fillStyle = "gray";
-      ctx.fillRect(0, 0, width, height);
-      moveBtR();
+    　ctx.fillRect(0, 0, width, height);
       moveBtR();
       moveBtL();
     } else if (view == 1) {
-      var img = new Image();
-      img.src = "../pic3/1-1.jpg";
-      ctx.drawImage(img, 0, 0);
-      moveBtR();
+      img.src = "pic3/1-1.jpg";
+      img.onload = function(){
+      ctx.drawImage(img, 0, 0, width, height);
+      //ctx.fillStyle = "red";
+    　//ctx.fillRect(0, 0, width, height);
+			moveBtR();
+      }
     } else if (view == 2) {
-      img.src = "../../picture/main_bg.png";
-      ctx.fillStyle = "blue";
-      ctx.fillRect(0, 0, width, height);
-      moveBtL();
+      var clock= new Image();
+      clock.src = "pic3/1-2_clock2.png"
+      img.src = "pic3/1-2.jpg";
+      img.onload = function(){
+      ctx.drawImage(img, 0, 0, width, height);
+      ctx.drawImage(clock, width/5, 0, width/6, height/4);
+      //ctx.fillStyle = "blue";
+    　//ctx.fillRect(0, 0, width, height);
+			moveBtL();
+      }
     }
   }
 
