@@ -18,7 +18,7 @@ function Flag() {
   }
 }
 
-
+first()
 function first() {
   Flag();
 
@@ -37,7 +37,7 @@ function first() {
     End2();
   }
 }
-first()
+
 
 function End1() {
   const message = document.querySelector('.p');
