@@ -9,8 +9,8 @@ function Flag() {
   let flagjudge = [];
   let trueEnd = false;
 
-  if (some) {
-    flagjudge[0] = true;
+  for(let i=0; i<flagjudge.length; i++){
+    flagjudge[i] = false;
   }
 
   if (flagjudge[0]) {
@@ -18,19 +18,17 @@ function Flag() {
   }
 }
 
+//ウィンドウをクリックでフラグを対処
+document.body.onclick = Room1()
+
+function Room1() {
+  const some = document.querySelector('p');
+  some.textContent = "文字を変更"
+}
 first()
 function first() {
   Flag();
 
-  //ウィンドウをクリックでフラグを対処
-  document.body.onclick = Room1()
-
-  function Room1() {
-    const some = document.querySelector('.p');
-    some.textContent = "文字を変更"
-    Flag.flagjudge[0] = true;
-  }
-  
   if (Flag.trueEnd) {
     End1();
   } else {
