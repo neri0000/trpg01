@@ -47,9 +47,22 @@ function start() {
           view = 0;
           printView();
         }
+        if (mouseX > width/5 && mouseX < width/5+width/4 && mouseY > 0 && mouseY < 0+width/4) {
+          hit(width/5, 0, width/6, height/4);
+        }
       }
     }
   }
+
+  function hit(x,y,w,h) {
+    ctx.save();
+    ctx.clearRect(x, y, w, h);
+    ctx.fillStyle = "red";
+    ctx.fillRect(x, y, w, h);
+    ctx.restore();
+  }
+
+
 
   function printView() {
     var img = new Image();
@@ -75,6 +88,7 @@ function start() {
       ctx.drawImage(clock, width/5, 0, width/6, height/4);
       //ctx.fillStyle = "blue";
     　//ctx.fillRect(0, 0, width, height);
+      item(width/5, 0, width/6, height/4);
 			moveBtL();
       }
     }
@@ -97,6 +111,12 @@ function start() {
     ctx.closePath();
     ctx.fillStyle = "#ffffff";
     ctx.fill();
+  }
+  function item(x,y,w,h) {
+    ctx.save();
+    ctx.fillStyle = "black";
+    ctx.fillRect(x, y, w, h);
+    ctx.restore();
   }
 }
 start();
