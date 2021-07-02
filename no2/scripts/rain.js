@@ -8,6 +8,7 @@ const height = canvas.height = window.innerHeight;
 
 var view = 0;　　//いま自分がどこにいるのかを示す変数（0=タイトル）
 
+
 /*
 
 var particles = Particles.init({
