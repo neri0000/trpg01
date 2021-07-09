@@ -47,9 +47,9 @@ function start() {
           view = 0;
           printView();
         }
-        if (mouseX > width/5 && mouseX < width/5+width/4 && mouseY > 0 && mouseY < 0+width/4) {
-          hit(width/5, 0, width/6, height/4);
-        }
+      }
+      if (mouseX > width/5 && mouseX < width/5+width/4 && mouseY > 0 && mouseY < 0+width/4) {
+        hit(width/5, 0, width/6, height/4);
       }
     }
   }
@@ -114,7 +114,7 @@ function start() {
   }
   function item(x,y,w,h) {
     ctx.save();
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "none";
     ctx.fillRect(x, y, w, h);
     ctx.restore();
   }
