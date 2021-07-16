@@ -87,6 +87,7 @@ function End1() {
 function End2() {
   const message = document.querySelector('.p');
   message.textContent = "finish?"
+}
 
 const canvas = document.getElementById('canvas');
 const c = canvas.getContext('2d');
