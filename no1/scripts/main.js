@@ -17,3 +17,25 @@ var scrollAnimationFunc = function() {
 window.addEventListener('load', scrollAnimationFunc);
 window.addEventListener('scroll', scrollAnimationFunc);
 }
+
+
+//セリフ
+
+var text = [
+  " ",
+  "埃が積もっている...しばらく誰かに使われた形跡は無さそうだ。",
+  "いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい",
+  "うううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう"
+] 
+
+var n = 1;
+var max = text.length;
+
+var myfunc = function () {
+  var str = "あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ";
+  document.getElementById('write').innerHTML = text[n] ;
+  n++;
+  if(n > max){
+    n = 0;
+  }
+}

@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById('canvas');
 const c = canvas.getContext('2d');
 
@@ -77,8 +76,8 @@ function first() {
   } else {
     End2();
   }
+  requestAnimationFrame(loop);
 }
-
 
 function End1() {
   const message = document.querySelector('.p');
