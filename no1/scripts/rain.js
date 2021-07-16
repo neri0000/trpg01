@@ -1,72 +1,92 @@
+
 const canvas = document.getElementById('canvas');
 const c = canvas.getContext('2d');
 
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
-//ランダム設定
-function random(min, max) {
-  const num = Math.floor(Math.random() * (max - min + 1)) + min;
-  return num;
-}
+//フラグ管理
+function Flag() {
+  let flagjudge = [];
+  let trueEnd = false;
 
-//成形
-function Shape(x, y, velY) {
-  this.x = x;
-  this.y = y;
-  this.velY = velY;
-}
-
-//雨の設定
-function Rain(x, y, step,size) {
-  Shape.call(this,x,y,step);
-  this.size = size;
-}
-
-Rain.prototype = Object.create(Shape.prototype);
-Rain.prototype.constructor = Rain;
-
-
-//描画処理
-Rain.prototype.draw = function() {
-  c.beginPath();
-  c.fillStyle = 'rgb(0, 0, 0,0.3)';
-  c.lineWidth = 0.5;
-  c.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-  c.fill();
-};
-
-//更新
-Rain.prototype.update = function() {
-  if((this.y + this.size) >= height) {
-    this.y = 0;
-    this.x = random(this.size,width-this.size);
+  for(let i=0; i<flagjudge.length; i++){
+    flagjudge[i] = false;
   }
-  this.y += this.velY;
-};
 
-
-
-const rains = [];
-
-while(rains.length < 10) {
-  const size = random(2,5);
-  let rain = new Rain(
-    random(size,width - size),
-    random(size,height - size),
-    size*0.3,size
-  );
-  rains.push(rain);
-}
-
-function loop() {
-  c.fillStyle = 'rgba(193, 189, 189)';
-  c.fillRect(0,0,width,height);
-
-  for(let i = 0; i < rains.length; i++) {
-      rains[i].draw();
-      rains[i].update();
+  if (flagjudge[0]) {
+    trueEnd = true;
   }
-  requestAnimationFrame(loop);
 }
-loop();
+
+const events = window.document;
+
+//ウィンドウをクリックでフラグを対処
+events.body.onclick = Room1()
+
+function Room1() {
+  const some = document.querySelector('p');
+  some.textContent = "文字を変更"
+
+}
+
+ItemClick()
+function ItemClick(){
+  // 追加ボタンをinputタグで作り、bodyタグの子要素に入れる
+  let key = 0;
+  const addButton = document.createElement('input');
+  addButton.classList.add('addition');
+  addButton.type = 'button';
+  addButton.value = '追加';
+  document.body.appendChild(addButton);
+
+  // 追加ボタンをクリックしたら、ナンバー付の削除ボタンをinputタグで作る関数
+  function buttonAdd() {
+      const addButtonClick = document.getElementsByClassName('addition')[0];
+      addButtonClick.addEventListener('click', ()=> {
+          const delButton = document.createElement('input');
+          delButton.classList.add('deletion');
+          delButton.type = 'button';
+          delButton.value = `${key}：削除`;
+          document.body.appendChild(delButton);
+          key++;
+          buttonDelete();
+      }, false);
+  }
+  
+
+  //クリックした削除ボタンを取る関数（実は非表示にするだけ）
+  function buttonDelete() {
+      for (let i = 0; i < key; i++) {
+          const deleteButtonClick = document.getElementsByClassName('deletion')[i];
+          deleteButtonClick.addEventListener('click', ()=> {
+              deleteButtonClick.classList.add('hidden');
+          }, false);
+      }
+  }
+
+  buttonAdd()
+}
+
+
+first()
+function first() {
+  Flag();
+
+  if (Flag.trueEnd) {
+    End1();
+  } else {
+    End2();
+  }
+}
+
+
+function End1() {
+  const message = document.querySelector('.p');
+  message.textContent = "finish!"
+}
+
+function End2() {
+  const message = document.querySelector('.p');
+  message.textContent = "finish?"
+}
