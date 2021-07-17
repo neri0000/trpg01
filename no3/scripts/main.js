@@ -5,10 +5,9 @@ window.onload = function() {
 
 var str = "...";
 document.getElementById('write').innerHTML = str;
+//document.getElementById('Iam').innerHTML = '<img src="pic3/t2.png" alt="aa">';
+document.getElementById('Iam').innerHTML = '<img src="pic3/t2.png" alt="aa">';
 }
-
-
-
 
 //セリフ
 var text = [
@@ -39,7 +38,6 @@ var text = [
 
 var n = 0;
 var max = text.length;
-
 var myfunc = function () {
   document.getElementById('write').innerHTML = text[n];
   n++;
@@ -59,15 +57,37 @@ var text2 = [
   "そこは先ほどまでいた自室ではなく、ドアのみが立ち並ぶ無機質な空間であった。",
   "振り返ってみても、そこには壁があるのみで入口らしき物は見当たらない。まるで寝室の扉の先が此処に繋がっていたかのような演出だ。",
   "異常事態。極めて奇妙な体験をしている。それにも関わらず、私の心はこの状況に楽しみを感じ始めていた。",
-  "？？「面白い」",
 ] 
 
 var max2 = text2.length;
-
 var myfunc2 = function () {
   document.getElementById('write').innerHTML = text2[n];
   n++;
   if(n > max2){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+    document.getElementById('Iam').innerHTML = '<img src="pic3/t1.png" alt="aa">';
+  }
+}
+
+var d1 = 0;
+var text3 = [
+  "古めかしい木製の扉だ。",
+  "ノブを握ると、以外にも鍵はかかっていないようだ。",
+  "「何だか悪いことをしているみたい」",
+  "「.........。」",
+  "ここが出口かもしれない。調べずに行くには余りにも惜しい気がする。",
+  "中の人に怒られたとしても、その人に事情を話せばいいだけのこと。",
+  "「失礼しまーす...」",
+  "どこからか重厚な雰囲気が漏れ出す。",
+  "--滝君のキーアイテムを入手した",
+] 
+
+var max3 = text3.length;
+var myfunc3 = function () {
+  document.getElementById('write').innerHTML = text3[d1];
+  d1++;
+  if(d1 > max3){
     str = " ";
     document.getElementById('write').innerHTML = str;
   }

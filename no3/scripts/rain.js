@@ -81,7 +81,7 @@ function start() {
       }
     } else if (view == 2) {
       var clock= new Image();
-      clock.src = "pic3/1-2_clock2.png"
+      clock.src = "pic3/1-2_clock2.png";
       img.src = "pic3/1-2.jpg";
       img.onload = function(){
       ctx.drawImage(img, 0, 0, width, height);

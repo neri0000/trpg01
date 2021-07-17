@@ -12,11 +12,6 @@ canvas{
   height:100%;
 }
 
-header{
-  width: 100%;
-  text-align: center;
-}
-
 body {
   font-family:'Amatic SC','游明朝','Noto Serif JP',serif;
   position:absolute;
@@ -36,17 +31,12 @@ p{
   font-size: 1vw;
   line-height: 2;
 }
-h1 {
-  margin-top: 5vw;
-  font-size: 6vw;
-}
 
 h2 {
-  font-size: 6vw;
+  font-size: 4vw;
   margin: 0;
   margin-top: 20%;
 }
-
 
 /*ロードアクション*/
 #loading {
@@ -80,16 +70,36 @@ h2 {
 .text {
   background-color: lightgray;
   position: relative;
-  top: 70%;
+  top: 75%;
   width: 60%;
   display: inline-block;
-  margin: 1.5em 0;
-  padding: 7px 50px;
+  margin: 0%;
+  padding: 1% 5%;
   min-width: 120px;
-  min-height: 120px;
   max-width: 100%;
+  min-height: 15%;
   font-size: 3vmin;
   text-align: left;
+  opacity: 0.5;
+}
+.say{
+  position: absolute;
+  width: 75%;
+  min-height: 15%;
+  display: inline-block;
+  margin: 0%;
+  padding: 1% 3%;
+}
+.face{
+  background-color: rgb(92, 86, 86);
+  position: relative;
+  width: 13%;
+  height: 100%;
+  display: inline-block;
+  margin: 0%;
+}
+.face img{
+  width: 100%;
 }
 
 .dounyu{
@@ -97,21 +107,14 @@ h2 {
 }
 
 
-
-.title{
-  width: auto;
-  height: 100%;
-  text-align: center;
-}
-
-
 .home{
+  position: absolute;
   width: 100%;
   height: 100%;
   top:0;
   left:0;
   margin: 0%;
-  text-align: center;
+  padding: 0%;
   background-image: url("../../picture/main_bg.png");
   background-size:cover;
   background-position:bottom;
@@ -140,5 +143,21 @@ a:hover {
   color: red;
 }
 
+.door{
+  position: relative;
+  top: 10%;
+  right: 4%;
+  opacity: 0.5;
+}
+ul{
+  list-style: none;
+}
+li{
+  background-color: red;
+  width: 9%;
+  height: 17vw;
+  margin: 0 4%;
+  display: inline-block;
+}
 
 
