@@ -93,4 +93,11 @@ var myfunc3 = function () {
   }
 }
 
+var d3 = function () {
+    location.href = "index2.html";
+}
+
+
+
+
 
