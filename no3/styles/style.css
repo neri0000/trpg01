@@ -121,6 +121,10 @@ h2 {
   display:none;
 }
 
+.have{
+  background-color: #616161;
+}
+
 label[for="menu"]{
   position: absolute;
   width: auto;

@@ -5,67 +5,11 @@ window.onload = function() {
 
 var str = "「！」";
 document.getElementById('write').innerHTML = str;
-//document.getElementById('Iam').innerHTML = '<img src="pic3/t2.png" alt="aa">';
 document.getElementById('Iam').innerHTML = '<img src="../pic3/t1.png" alt="aa">';
 }
 
 
-//フラグ管理
-function Flag() {
-  let flagjudge = new Array(4);
-  let trueEnd = false;
-
-  for(let i=0; i<flagjudge.length; i++){
-    flagjudge[i] = false;
-  }
-
-  if (flagjudge[0]) {
-    trueEnd = true;
-  }
-}
-
-
-function ItemClick(){
-  // 追加ボタンをinputタグで作り、bodyタグの子要素に入れる
-  let key = 0;
-  const addButton = document.createElement('input');
-  addButton.classList.add('addition');
-  addButton.type = 'button';
-  addButton.value = '追加';
-  document.body.appendChild(addButton);
-
-  // 追加ボタンをクリックしたら、ナンバー付の削除ボタンをinputタグで作る関数
-  function buttonAdd() {
-      const addButtonClick = document.getElementsByClassName('addition')[0];
-      addButtonClick.addEventListener('click', ()=> {
-          const delButton = document.createElement('input');
-          delButton.classList.add('deletion');
-          delButton.type = 'button';
-          delButton.value = `${key}：削除`;
-          document.body.appendChild(delButton);
-          flag.flagjudge[key] = ture;
-          key++;
-          buttonDelete();
-      }, false);
-  }
-
-  //クリックした削除ボタンを取る関数（実は非表示にするだけ）
-  function buttonDelete() {
-      for (let i = 0; i < key; i++) {
-          const deleteButtonClick = document.getElementsByClassName('deletion')[i];
-          deleteButtonClick.addEventListener('click', ()=> {
-              deleteButtonClick.classList.add('hidden');
-          }, false);
-      }
-  }
-
-  buttonAdd()
-}
-
-
-
-
-//セリフ
+//初見セリフ
 var text = [
   "暗い、森のただなかにいる。",
   "光は幾筋にも漏れてくるけれど、それに照らされる深緑色の地面は、ごく少ない。空を見上げれば、空は見えないけれど、緑のグラデーションが鮮やかに光の色を教えてくれる。",
@@ -90,12 +34,14 @@ var op = function () {
   }
 }
 
+
+//テレビのセリフ
 var text2 = [
   "テレビだ。何も映っていない。",
   "...。",
   "テレビの黒い画面は、私の姿を反射している。",
   "「素晴らしい。」",
-  "「森の中のテレビというアンバランスな世界観はなかなかに刺激的だ。まるで、」",
+  "まるで...",
   "--映画やドラマのワンシーンみたいだ。",
 ] 
 
@@ -112,6 +58,8 @@ var tv = function () {
   }
 }
 
+
+//フィルムのセリフ
 var f = 0;
 var text3 = [
   "木の枝から紐のようなものが垂れ下がっている。",
