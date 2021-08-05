@@ -3,14 +3,15 @@ window.onload = function() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
 
-var str = "...";
-document.getElementById('write').innerHTML = str;
+
+  Flag()
+  var str = "...";
+  document.getElementById('write').innerHTML = str;
+  document.getElementById('Iam').innerHTML = '<img src="pic3/t2.png" alt="aa">';
+  document.getElementById('HAVE').innerHTML = str;
 }
 
-
-
-
-//セリフ
+//OPセリフ
 var text = [
   "..................",
   "急がなければ。",
@@ -37,9 +38,9 @@ var text = [
   "暗転。",
 ] 
 
+//導入セリフ表示
 var n = 0;
 var max = text.length;
-
 var myfunc = function () {
   document.getElementById('write').innerHTML = text[n];
   n++;
@@ -51,6 +52,7 @@ var myfunc = function () {
   }
 }
 
+//目覚めた場所のセリフ
 var text2 = [
   "？？「...ここは？」",
   "当然と言うべきか、返事はない。",
@@ -59,18 +61,73 @@ var text2 = [
   "そこは先ほどまでいた自室ではなく、ドアのみが立ち並ぶ無機質な空間であった。",
   "振り返ってみても、そこには壁があるのみで入口らしき物は見当たらない。まるで寝室の扉の先が此処に繋がっていたかのような演出だ。",
   "異常事態。極めて奇妙な体験をしている。それにも関わらず、私の心はこの状況に楽しみを感じ始めていた。",
-  "？？「面白い」",
 ] 
 
 var max2 = text2.length;
-
 var myfunc2 = function () {
   document.getElementById('write').innerHTML = text2[n];
   n++;
   if(n > max2){
     str = " ";
     document.getElementById('write').innerHTML = str;
+    document.getElementById('Iam').innerHTML = '<img src="pic3/t1.png" alt="aa">';
   }
 }
+
+//ドア１
+var d1 = 0;
+var text3 = [
+  "古めかしい木製の扉だ。",
+  "ノブを握ると、以外にも鍵はかかっていないようだ。",
+  " ",
+  "「.........。」",
+  "どこからか重厚な雰囲気が漏れ出す。",
+  "--滝君のキーアイテムを入手した",
+] 
+
+var max3 = text3.length;
+var myfunc3 = function () {
+  document.getElementById('write').innerHTML = text3[d1];
+  d1++;
+  if(d1 > max3){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+    aaaa[0] = true;
+  }
+}
+
+
+//ドア3
+var d3 = function () {
+    location.href = "index2.html";
+}
+
+
+//アイテムリスト入手状況
+function Flag() {
+  let aaaa = new Array(4);
+  for(let i=0; i<aaaa.length; i++){
+    aaaa[i] = false;
+  }
+}
+
+var itemlist = [
+  "滝君のアイテム",
+  "MAP",
+  "８mmフィルム",
+  "バールのようなもの"
+]
+
+
+var Item = function () {
+  for(let i=0; i<itemList.length; i++){
+    if(aaaa[i]){
+      document.getElementById('HAVE').innerHTML = itemlist[i];
+    }
+  }
+}
+
+
+
 
 

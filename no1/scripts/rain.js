@@ -7,7 +7,7 @@ const height = canvas.height = window.innerHeight;
 
 //フラグ管理
 function Flag() {
-  let flagjudge = [];
+  let flagjudge = new Array(4);
   let trueEnd = false;
 
   for(let i=0; i<flagjudge.length; i++){
@@ -49,11 +49,11 @@ function ItemClick(){
           delButton.type = 'button';
           delButton.value = `${key}：削除`;
           document.body.appendChild(delButton);
+          flag.flagjudge[key] = ture;
           key++;
           buttonDelete();
       }, false);
   }
-  
 
   //クリックした削除ボタンを取る関数（実は非表示にするだけ）
   function buttonDelete() {
@@ -68,7 +68,6 @@ function ItemClick(){
   buttonAdd()
 }
 
-
 first()
 function first() {
   Flag();
@@ -79,7 +78,6 @@ function first() {
     End2();
   }
 }
-
 
 function End1() {
   const message = document.querySelector('.p');

@@ -47,8 +47,10 @@ function start() {
           view = 0;
           printView();
         }
-        if (mouseX > width/5 && mouseX < width/5+width/4 && mouseY > 0 && mouseY < 0+width/4) {
+        if (mouseX > width/5 && mouseX < width){
+          if(mouseY > 0 && mouseY < height) {
           hit(width/5, 0, width/6, height/4);
+          }
         }
       }
     }
@@ -56,12 +58,47 @@ function start() {
 
   function hit(x,y,w,h) {
     ctx.save();
-    ctx.clearRect(x, y, w, h);
     ctx.fillStyle = "red";
     ctx.fillRect(x, y, w, h);
     ctx.restore();
   }
-
+  ItemClick()
+  function ItemClick(){
+    // 追加ボタンをinputタグで作り、bodyタグの子要素に入れる
+    let key = 0;
+    const addButton = document.createElement('input');
+    addButton.classList.add('addition');
+    addButton.type = 'button';
+    addButton.value = '追加';
+    document.body.appendChild(addButton);
+  
+    // 追加ボタンをクリックしたら、ナンバー付の削除ボタンをinputタグで作る関数
+    function buttonAdd() {
+        const addButtonClick = document.getElementsByClassName('addition')[0];
+        addButtonClick.addEventListener('click', ()=> {
+            const delButton = document.createElement('input');
+            delButton.classList.add('deletion');
+            delButton.type = 'button';
+            delButton.value = `${key}：削除`;
+            document.body.appendChild(delButton);
+            flag.flagjudge[key] = ture;
+            key++;
+            buttonDelete();
+        }, false);
+    }
+  
+    //クリックした削除ボタンを取る関数（実は非表示にするだけ）
+    function buttonDelete() {
+        for (let i = 0; i < key; i++) {
+            const deleteButtonClick = document.getElementsByClassName('deletion')[i];
+            deleteButtonClick.addEventListener('click', ()=> {
+                deleteButtonClick.classList.add('hidden');
+            }, false);
+        }
+    }
+  
+    buttonAdd()
+  }
 
 
   function printView() {
@@ -81,7 +118,7 @@ function start() {
       }
     } else if (view == 2) {
       var clock= new Image();
-      clock.src = "pic3/1-2_clock2.png"
+      clock.src = "pic3/1-2_clock2.png";
       img.src = "pic3/1-2.jpg";
       img.onload = function(){
       ctx.drawImage(img, 0, 0, width, height);
@@ -114,7 +151,7 @@ function start() {
   }
   function item(x,y,w,h) {
     ctx.save();
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "white";
     ctx.fillRect(x, y, w, h);
     ctx.restore();
   }

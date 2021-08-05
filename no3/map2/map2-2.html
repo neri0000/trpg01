@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title>sonna</title>
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <script src="scripts/main.js"></script>
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <link href="../styles/map2.css" rel="stylesheet" type="text/css">
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/map2.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700 rel=" rel="stylesheet">
@@ -16,25 +18,15 @@
 
 
   <body>
-    <div class="home">
+    <div class="home" style="--back: url(../pic3/2-3.jpg); ">
       <div class = "text" onclick="myfunc2()">
         <div class="face" id = Iam> </div>
         <div class="say" id = write> </div>
       </div>
 
-      <ul class="door">
-        <li onclick="myfunc3()">1</li>
-        <li>2</li>
-        <li onclick="d3()">3</li>
-        <li>4</li>
+      <ul class="view">
+        <li onclick="rLeft()" class="right"></li>
       </ul>
-
-      <label for="menu" onclick="Item()">item</label>
-      <input type="checkbox" id="menu">
-      <div class="dropdown">
-        <div class="have" id = HAVE>a</div>
-        <h2>item</h2>
-      </div>
   </div>
 　</body>
 </html>
