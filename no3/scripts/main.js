@@ -82,7 +82,7 @@ var text3 = [
   " ",
   "「.........。」",
   "どこからか重厚な雰囲気が漏れ出す。",
-  "--滝君のキーアイテムを入手した",
+  "--特に目ぼしいものは無かった。",
 ] 
 
 var max3 = text3.length;
@@ -118,12 +118,9 @@ var itemlist = [
   "バールのようなもの"
 ]
 
-
 var Item = function () {
   for(let i=0; i<itemList.length; i++){
-    if(aaaa[i]){
-      document.getElementById('HAVE').innerHTML = itemlist[i];
-    }
+      document.getElementById('HAVE').innerHTML = "waaaaa";
   }
 }
 

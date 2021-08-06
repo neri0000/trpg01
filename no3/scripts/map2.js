@@ -89,3 +89,43 @@ var rLeft = function () {
 var lRight = function () {
   location.href = "map2-1.html";
 }
+
+
+
+///////////////////////////////////////////////////////
+//湖セリフ
+var water = [
+  "「？」",
+  "しばらく歩くと、開けた場所があった。",
+  "「...湖？」",
+  "その場所は”自然”というには余りにも、生活感の漂う空間だった。",
+] 
+var w = 0;
+var max2 = water.length;
+var op2 = function () {
+  document.getElementById('write').innerHTML = water[w];
+  w++;
+  if(w > max2){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+    ItemClick();
+  }
+}
+
+///////////////////////////////////////////////////////
+//通路セリフ
+var road = [
+  "途端に風が重く、冷たくなった。",
+  "周囲がやけに暗く感じるのは、この異様な雰囲気のせいだろうか",
+] 
+var r = 0;
+var max3 = road.length;
+var op3 = function () {
+  document.getElementById('write').innerHTML = road[r];
+  r++;
+  if(r > max3){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+    ItemClick();
+  }
+}

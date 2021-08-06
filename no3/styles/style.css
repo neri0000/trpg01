@@ -98,7 +98,7 @@ h2 {
 }
 /*テキストボックスに表示する顔画像*/
 .face{
-  background-color: rgb(92, 86, 86);
+  background-color: rgb(219, 219, 219);
   position: relative;
   width: 13%;
   height: 100%;
@@ -117,12 +117,12 @@ h2 {
   right: 25%;
   width: 50%;
   height: 50%;
-  background-color: #FFFFFF;
+  background-color: #d4d4d4;
   display:none;
 }
 
-.have{
-  background-color: #616161;
+input[type=checkbox] {
+  display: none; 
 }
 
 label[for="menu"]{
@@ -136,7 +136,6 @@ label[for="menu"]{
   font-size: 2vw;
   background:red;
 }
-
 
 #menu:checked + .dropdown{
   display:block;
@@ -164,7 +163,12 @@ label[for="menu"]{
   background-position:bottom;
   text-align: center;
 }
-
+.home h2{
+  position: absolute;
+  font-size: 3vw;
+  top: 0;
+  left: 2vw;
+}
 /*マップ*/
 .map{
   background-color: #FFFFFF;
@@ -196,7 +200,8 @@ a:hover {
   opacity: 0.5;
 }
 li{
-  background-color: red;
+  /*background-color: red;
+  */
   width: 9%;
   height: 17vw;
   margin: 0 4%;
