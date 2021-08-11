@@ -2,15 +2,6 @@
   --back: url("../pic3/1-1.jpg");
 }
 
-li,a{
-  font-size: 1vw;
-  line-height: 2;
-}
-p{
-  font-size: 1vw;
-  line-height: 2;
-}
-
 .home{
   background-image: var(--back);
   background-position:bottom;
