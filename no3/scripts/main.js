@@ -3,12 +3,9 @@ window.onload = function() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
 
-
-  Flag()
   var str = "...";
   document.getElementById('write').innerHTML = str;
   document.getElementById('Iam').innerHTML = '<img src="pic3/t2.png" alt="aa">';
-  document.getElementById('HAVE').innerHTML = str;
 }
 
 //OPセリフ
@@ -23,14 +20,14 @@ var text = [
   "本来であれば同じ班員と共同で仕上げるべきものを、半ば押し付けられるようにして一任されたのだ。",
   "辛くないと言ったら嘘になる。同じ大学生として、不真面目な彼らに腹が立たないと言えば、それも嘘になる。",
   "それでも、こうして作業に没頭できているのは。やはり好きだからなのだろう。",
-  "図書館、病院、森、...。ドラマは場所を限定しない。突然大きな熊に襲われたり、気づけば世界を救っていたり、やろうと思えば思うように創造できる机上の世界。",
+  "図書館、病院、森、...。作品は場所を限定しない。時空を超えて旅をしたり、気づけば世界を救っていたり、やろうと思えば思うように創造できる机上の世界。",
   "カットも撮り直しもできない現実なんかより、ずっと自由だ。",
-  "『お前のドラマは現実味がない』とはよく言われるが、物語の中くらい現実離れしたっていいと私は思う。",
-  "だってその方が面白いから。",
+  "『お前の脚本は現実味がない』とはよく言われるが、物語の中くらい現実離れしたっていいと私は思う。",
+  "だってその方が絶対面白い。",
   " ",
-  "部屋の時計がカチリカチリと音を立てた。集中しているときにこそ、僅かな騒音がやけに大きく聞こえてしまうものだ。",
+  "部屋の時計が音を立てる。集中しているときにこそ、僅かな騒音がやけに大きく聞こえてしまうものだ。",
   "通常よりもいくらか濃い筆圧が、無意識にもその音にストレスを感じていることを告げる。時刻は深夜の2時を回っていた。",
-  "？？「明日も早いし、もう寝るか。...というか寝たい。」",
+  "「明日も早いし、もう寝るか。...というか寝たい。」",
   "-欠伸",
   "生理的に浮かぶ涙を手の甲で拭いつつ、机を整理する。書き殴った様な筆跡が目立つ脚本は、今日も未完成のまま閉じられた。",
   "ふらつく足取りで、縋るように寝室へ続く扉のノブを捻る。",
@@ -54,7 +51,7 @@ var myfunc = function () {
 
 //目覚めた場所のセリフ
 var text2 = [
-  "？？「...ここは？」",
+  "「...ここは？」",
   "当然と言うべきか、返事はない。",
   "辺りはほの暗く、周囲を見た渡してみても正確な情報が得られそうにない。",
   "しかし、人間とは慣れの生物である。時間が経つに連れ環境に私の視界が適応し始めた。",
@@ -77,52 +74,123 @@ var myfunc2 = function () {
 //ドア１
 var d1 = 0;
 var text3 = [
-  "古めかしい木製の扉だ。",
-  "ノブを握ると、以外にも鍵はかかっていないようだ。",
+  "古めかしい木製の扉。",
+  "鍵がかかっている。",
   " ",
-  "「.........。」",
-  "どこからか重厚な雰囲気が漏れ出す。",
-  "--滝君のキーアイテムを入手した",
+  "ここはもう調べた。",
 ] 
 
-var max3 = text3.length;
-var myfunc3 = function () {
+var D1 = text3.length;
+var door1 = function () {
   document.getElementById('write').innerHTML = text3[d1];
   d1++;
-  if(d1 > max3){
-    str = " ";
+  if(d1 > D1){
+    str = "ここはもう調べた。";
     document.getElementById('write').innerHTML = str;
-    aaaa[0] = true;
+  }
+}
+
+//ドア2
+var d2 = 0;
+var d2text = [
+  "さび付いた鉄のの扉。",
+  "鍵がかかっている。",
+  " ",
+  "ここはもう調べた。",
+] 
+
+var D2 = d2text.length;
+var door2 = function () {
+  document.getElementById('write').innerHTML = d2text[d2];
+  d2++;
+  if(d2 > D2){
+    str = "ここはもう調べた。";
+    document.getElementById('write').innerHTML = str;
   }
 }
 
 
 //ドア3
-var d3 = function () {
-    location.href = "index2.html";
+var d3 = 0;
+var d3text = [
+  "比較的新しい木製の扉。隙間からは湿った空気が流れてきている。",
+  "鍵はかかっていないようだ。",
+  "",
+  "扉の隙間に1枚のメモ用紙が挟まっている。",
+  "「なんだこれ、何かの地図？」",
+  "「...一応持っておこうかな」",
+  "",
+  "「止まってたって物語は進まないよね」",
+  "扉を開き、中へ進んだ。",
+] 
+
+var D3 = d3text.length;
+var door3 = function () {
+  document.getElementById('write').innerHTML = d3text[d3];
+  d3++;
+  if(d3 > D3){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+    location.href = "map2/map2-1.html";
+  }
+}
+
+//ドア4
+var d4 = 0;
+var d4text = [
+  "比較的新しい木製の扉。",
+  "鍵はかかっていないようだ。",
+  "中に入って部屋を調べる。",
+  "-滝君を入手した。-",
+  "",
+  "ここはもう調べた。",
+] 
+
+var D4 = d4text.length;
+var door4 = function () {
+  document.getElementById('write').innerHTML = d4text[d4];
+  d4++;
+  if(d4 == 3){
+    sessionStorage.setItem('get1', true);
+  }
+  if(d4 > D4){
+    str = "ここはもう調べた。";
+    document.getElementById('write').innerHTML = str;
+  }
 }
 
 
-//アイテムリスト入手状況
-function Flag() {
-  let aaaa = new Array(4);
-  for(let i=0; i<aaaa.length; i++){
-    aaaa[i] = false;
+//アイテムリスト入手状況セット
+function FlagSet() {
+  for(let i=0; i<itemlist.length; i++){
+    var k = 'get'+i;
+    data = sessionStorage.getItem(k);
+    if(data == 'false'){
+      sessionStorage.setItem(k, true);
+    }
   }
 }
 
 var itemlist = [
-  "滝君のアイテム",
   "MAP",
+  "滝君",
   "８mmフィルム",
   "バールのようなもの"
 ]
 
-
+let count = 1;
+let address = 'HAVE' + count;
 var Item = function () {
-  for(let i=0; i<itemList.length; i++){
-    if(aaaa[i]){
-      document.getElementById('HAVE').innerHTML = itemlist[i];
+  var data;
+  for(let i=0; i<itemlist.length; i++){
+    var k = 'get'+i;
+    data = sessionStorage.getItem(k);
+    console.log(data);
+    if(data == 'true'){
+      address = 'HAVE' + count;
+      document.getElementById(address).innerHTML = itemlist[i];
+      sessionStorage.setItem(k, false);
+      count++;
     }
   }
 }

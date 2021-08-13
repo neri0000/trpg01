@@ -98,7 +98,7 @@ h2 {
 }
 /*テキストボックスに表示する顔画像*/
 .face{
-  background-color: rgb(92, 86, 86);
+  background-color: rgb(219, 219, 219);
   position: relative;
   width: 13%;
   height: 100%;
@@ -113,16 +113,23 @@ h2 {
 .dropdown{
   z-index: 10;
   position: absolute;
-  top: 25%;
-  right: 25%;
-  width: 50%;
+  top: 1vw;
+  right: 7vw;
+  width: 10%;
   height: 50%;
-  background-color: #FFFFFF;
+  background-color: #222222;
   display:none;
+  text-align: left;
+  padding: 2vw;
 }
 
 .have{
-  background-color: #616161;
+  color: white;
+  font-size: 1.5vw;
+  margin: 0.5vw;
+}
+input[type=checkbox] {
+  display: none; 
 }
 
 label[for="menu"]{
@@ -134,11 +141,25 @@ label[for="menu"]{
   right: 0;
   display:block;
   font-size: 2vw;
-  background:red;
+  background:rgba(255, 0, 0, 0.616);
 }
 
+label[for="mapSet"]{
+  position: absolute;
+  width: auto;
+  margin: 1%;
+  padding: 1%;
+  top: 5vw;
+  right: 0;
+  display:block;
+  font-size: 2vw;
+  background:rgba(255, 0, 0, 0.432);
+}
 
 #menu:checked + .dropdown{
+  display:block;
+}
+#mapSet:checked + .map{
   display:block;
 }
 
@@ -164,12 +185,22 @@ label[for="menu"]{
   background-position:bottom;
   text-align: center;
 }
-
+.home h2{
+  position: absolute;
+  font-size: 3vw;
+  top: 0;
+  left: 2vw;
+}
 /*マップ*/
 .map{
-  background-color: #FFFFFF;
-  width: 50vw;
-  height: 50vw;
+  z-index: 10;
+  position: absolute;
+  top: 1vw;
+  right: 7vw;
+  display:none;
+
+  width: 40vw;
+  height: 40vw;
 
   background-image: url("../pic3/map.jpg");
   background-size:cover;
@@ -203,5 +234,10 @@ li{
   display: inline-block;
 }
 
+@media screen and (min-width: 1700px){
+  .door{
+    top: 22%;
+  }
+}
 
 
