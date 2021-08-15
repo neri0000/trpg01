@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('canvas');
 const c = canvas.getContext('2d');
 
@@ -5,23 +6,22 @@ const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
 //フラグ管理
-function Flag() {
-  let flagjudge = new Array(4);
-  let trueEnd = false;
+let flagjudge = new Array(4);
+let trueEnd = false;
 
-  for(let i=0; i<flagjudge.length; i++){
-    flagjudge[i] = false;
-  }
-
-  if (flagjudge[0]) {
-    trueEnd = true;
-  }
+for(let i=0; i<flagjudge.length; i++){
+  flagjudge[i] = false;
 }
+
+if (flagjudge[0]) {
+  trueEnd = true;
+}
+
 
 const events = window.document;
 
 //ウィンドウをクリックでフラグを対処
-events.body.onclick = Room1()
+// events.body.onclick = Room1()
 
 function Room1() {
   const some = document.querySelector('p');
@@ -29,7 +29,7 @@ function Room1() {
 
 }
 
-ItemClick()
+// ItemClick()
 function ItemClick(){
   // 追加ボタンをinputタグで作り、bodyタグの子要素に入れる
   let key = 0;
@@ -71,12 +71,11 @@ first()
 function first() {
   Flag();
 
-  if (Flag.trueEnd) {
+  if (trueEnd) {
     End1();
   } else {
     End2();
   }
-  requestAnimationFrame(loop);
 }
 
 function End1() {
