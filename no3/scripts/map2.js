@@ -6,74 +6,69 @@ window.onload = function() {
 var str = "";
 document.getElementById('write').innerHTML = str;
 document.getElementById('Iam').innerHTML = '<img src="../pic3/t1.png" alt="aa">';
+
+
 FlagSet()
 }
 
 
 //初見セリフ
-var map2OP = [
-  "暗い、森のただなかにいる。",
-  "光は幾筋にも漏れてくるけれど、それに照らされる深緑色の地面は、ごく少ない。空を見上げれば、空は見えないけれど、緑のグラデーションが鮮やかに光の色を教えてくれる。",
-  "木の肌は視界を限りなく狭めてくる。もう一度、枝々に意識を傾けてみると、その何もないその空間に、白くて、透明な筋が見えた。",
-  "幻想的な光景に息を飲む。",
-  "生い茂る木々、湿った空気の合間を縫うように降り注ぐ陽光は、白い軌跡を残して地面に差す。",
-  "そんな空間に、異様な存在が鎮座している。",
-  "不自然に開けた場所に置かれた”テレビ”は、不法投棄というには余りにも奇麗な状態で此方を見上げていた。",
-  "その画面には無限の暗闇が続いている。最も、何か映っている方が可笑しいのだが、神秘的な雰囲気に毒されたせいか多少の非現実も許せる気がしてくる。",
+var map3OP = [
+  "暗い、森のなかにいる。",
+  "空を見上げれば、緑のグラデーションが鮮やかに光の色を教えてくれる。",
+  "周囲を見渡すも、壁と呼べるようなものは先ほど出てきた穴以外になくここが野外であることが分かる。",
+  "いつから部屋の外が森になったのか。いやしかし、それよりも、目の前に広がるこの幻想的な光景に息を飲む。",
+  "生い茂る木々、湿った空気、降り注ぐ陽光は、白い軌跡を残して地面に差す。",
+  "『ずっとここに居たい』と不意に思ってしまう程に、私は魅了されていた。",
+] 
+
+var map3Max = map3OP.length;
+var Ma = 0;
+let map3 = sessionStorage.getItem('op2');
+
+var op2 = function () {
+  if(map3 != 'end'){
+    document.getElementById('write').innerHTML = map3OP[Ma];
+    Ma++;
+  }
+  if(Ma == map3Max+1){
+    sessionStorage.setItem('op2', 'end');
+    map3 = sessionStorage.getItem('op2');
+  }
+  if(map3 == 'end'){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+  }
+}
+
+//tvセリフ
+var tvText = [
+  "ブラウン管テレビだ。何も映っていない。",
+  "...。",
+  "テレビの黒い画面は、私の姿を反射している。",
+  "私がテレビを見ているのか、テレビが私を見ているのか...そんな錯覚を覚える。",
+  "不気味で仕方がないが、静かに佇むその姿はこの空間に馴染んでいるように思えた。",
+  "だからなのか。",
   "何故だかよくわからないが、私にはその”テレビ”が",
   "...とても神聖なものに見えた。",
 ] 
-var n = 0;
-var map2 = map2OP.length;
-var op = function () {
-  document.getElementById('write').innerHTML = map2OP[n];
-  n++;
-  if(n > map2){
-    str = " ";
-    document.getElementById('write').innerHTML = str;
-  }
-}
 
+var yukaMax = tvText.length;
+var TVv = 0;
+let tvF = sessionStorage.getItem('tv');
 
-//テレビのセリフ
-var tvText = [
-  "テレビだ。何も映っていない。",
-  "...。",
-  "テレビの黒い画面は、私の姿を反射している。",
-  "「素晴らしい。」",
-  "まるで...",
-  "--映画やドラマのワンシーンみたいだ。",
-] 
-
-var maxTv = tvText.length;
-var t = 0;
 var tv = function () {
-  document.getElementById('write').innerHTML = tvText[t];
-  if(f > maxFilm){
-    t++;
+  if(tvF != 'end'){
+    document.getElementById('write').innerHTML = tvText[TVv];
+    TVv++;
   }
-  if(t > maxTv){
+  if(TVv == yukaMax+1){
+    sessionStorage.setItem('tv', 'end');
+    tvF = sessionStorage.getItem('tv');
+  }
+  if(tvF == 'end'){
     str = " ";
     document.getElementById('write').innerHTML = str;
-  }
-}
-
-
-//フィルムのセリフ
-var f = 0;
-var filmText = [
-  "木の枝から紐のようなものが垂れ下がっている。",
-  "よく見ようと近づくと、それは私の意図を察したかのように落ちてきた。",
-  "--未使用の８ｍｍフィルムを入手した",
-] 
-var maxFilm = filmText.length;
-var film = function () {
-  document.getElementById('write').innerHTML = filmText[f];
-  f++;
-  if(f > maxFilm){
-    str = " ";
-    document.getElementById('write').innerHTML = str;
-    itemFlag[2] = true;
   }
 }
 
@@ -92,39 +87,62 @@ var lRight = function () {
 }
 
 
-
 ///////////////////////////////////////////////////////
-//湖セリフ
-var water = [
-  "「？」",
-  "しばらく歩くと、開けた場所があった。",
-  "「...湖？」",
-  "その場所は”自然”というには余りにも、生活感の漂う空間だった。",
+//池のセリフ
+var ikeText = [
+  "息を飲むほど奇麗な泉だ。",
+  "木の葉を縫うようにして落ちる陽光を、その水面が反射する。",
+  "散った光はその周囲へと姿を消しては、また降りてくる。揺ぐようにして漂う光の粒が美しい。",
+  "「.......」",
+  "",
+  "底が見える程に透き通った水に、心が引き寄せられるのを感じた。",
+  "異様なまでの美しさに心が警鐘を鳴らすも、眼前の魅力の前にかき消された。",
+  "",
+  "「！！いけない、こんなことしてる場合じゃない。早く仕上げないと...」",
+  "…",
+  "「あれ、」",
+  "「仕上げるって...何を？」",
+  "何かを忘れている気がする。",
+  "",
+  "",
+  "何かを忘れている気がするのに、何かが思い出せない。",
+  "何かをわスれている気ガする。でも、それヨりも",
+  "「...もっと近くで見たいなぁ」",
+  "",
+  "",
+  "",
+  "「...もっと近くで見たいなぁ」",
+  "",
+  "「...もっともっと近くで見たいなぁ」",
+  "",
+  "",
+  "",
+  "",
+  "自然と体が前に出ていたのだろう、",
+  "「つい」や「うっかり」という言葉の通り、私は私の不用心によって足を滑らせた。",
+  "「うっわぁああああああ」",
 ] 
-var w = 0;
-var max2 = water.length;
-var op2 = function () {
-  document.getElementById('write').innerHTML = water[w];
-  w++;
-  if(w > max2){
+
+var maxIke = ikeText.length;
+var hibiC = 0;
+let ikeF = sessionStorage.getItem('ike');
+
+var ike = function () {
+  
+  if(ikeF != 'end'){
+    document.getElementById('write').innerHTML = ikeText[hibiC];
+    hibiC++;
+  }
+  if(hibiC == maxIke+1){
+    sessionStorage.setItem('ike', 'end');
+    ikeF = sessionStorage.getItem('ike');
+  }
+  if(ikeF == 'end'){
+    console.log(ikeF);
     str = " ";
     document.getElementById('write').innerHTML = str;
+    location.href = "../map3/map3-1.html";
   }
 }
 
-///////////////////////////////////////////////////////
-//通路セリフ
-var road = [
-  "途端に風が重く、冷たくなった。",
-  "周囲がやけに暗く感じるのは、この異様な雰囲気のせいだろうか",
-] 
-var r = 0;
-var max3 = road.length;
-var op3 = function () {
-  document.getElementById('write').innerHTML = road[r];
-  r++;
-  if(r > max3){
-    str = " ";
-    document.getElementById('write').innerHTML = str;
-  }
-}
+

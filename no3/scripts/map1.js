@@ -225,6 +225,7 @@ var bedText = [
   "",
   "「なんか怖いけど、取ってみるか」",
   "-斧を入手した-",
+  "-入手したアイテムは右上から確認出来ます。-",
 ] 
 var maxBed = bedText.length;
 var bedc = 0;
@@ -322,7 +323,7 @@ var hibi = function () {
 
   let hibiItem = sessionStorage.getItem('get0');
   console.log(ono);
-  if(hibiItem == 'false' || 'true'){
+  if(hibiItem == 'false'){
     document.getElementById('write').innerHTML = hibiT2[hibiC2];
     hibiC2++;
   }
@@ -370,5 +371,6 @@ var go = function () {
     str = " ";
     document.getElementById('write').innerHTML = str;
     location.href = "../map2/map2-1.html";
+    document.querySelector('.mori').style.display = "block";
   }
 }
