@@ -18,20 +18,32 @@
 
 
   <body>
-    <div class="home" style="--back: url(../pic3/2-3.jpg); ">
+    <div class="home" style="--back: url(../pic3/map2-2.png); ">
       <div class = "text" onclick="op2()">
         <div class="face" id = Iam>  <span class="have">aaaaaaaaaaaaaaaaaa</span> </div>
         <div class="say" id = write> </div>
       </div>
 
+      <div class="ike" onclick="ike()"></div>
+
       <ul class="view">
         <li onclick="rLeft()" class="right"></li>
       </ul>
       
-      <label for="menu">item</label>
+      <label for="mapSet" onclick="Item()">MAP</label>
+      <input type="checkbox" id="mapSet">
+      <div class="map">
+        <a class="a" href="../map1/map1-1.html" style="top:25vw; left:9vw;">room</a>
+        <a class="a mori" href="map2-1.html" style="top: 17vw; right:5vw;">forest</a>
+    </div>
+
+
+      <label for="menu" onclick="Item()">item</label>
       <input type="checkbox" id="menu">
       <div class="dropdown">
-        <h2>item</h2>
+        <div class="have" id = HAVE1></div>
+        <div class="have" id = HAVE2></div>
+        <div class="have" id = HAVE3></div>
       </div>
 
 
