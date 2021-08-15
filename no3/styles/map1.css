@@ -34,19 +34,52 @@ li{
   display: inline-block;
   
 }
+.back{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  opacity: 0.5;
+}
+.yuka{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 30vh;
+  background-color: blue;
+  opacity: 0.5;
+}
+
+.hibi{
+  position: absolute;
+  top: 0vh;
+  right: 40vw;
+  width: 20vw;
+  height: 70vh;
+  background-color: blue;
+  opacity: 0.5;
+}
+
+
 .left{
   width: 0;
   height: 0;
   border-left: 3vw solid white;
   border-top: 3vw solid transparent;
   border-bottom: 3vw solid transparent;
+  z-index: 5;
 }
 .right{
+  z-index: 5;
   width: 0;
   height: 0;
   border-right: 3vw solid white;
   border-top: 3vw solid transparent;
   border-bottom: 3vw solid transparent;
+}
+
+.ono{
+  display: block;
 }
 .items img{
   z-index: 5;

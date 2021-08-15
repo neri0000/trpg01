@@ -133,6 +133,7 @@ input[type=checkbox] {
 }
 
 label[for="menu"]{
+  z-index: 5;
   position: absolute;
   width: auto;
   margin: 1%;
@@ -145,6 +146,7 @@ label[for="menu"]{
 }
 
 label[for="mapSet"]{
+  z-index: 5;
   position: absolute;
   width: auto;
   margin: 1%;
