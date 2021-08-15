@@ -9,7 +9,7 @@
 
 a.a{
   position:relative;
-  font-size: 4vw;
+  font-size: 3vw;
   color: #000000;
   text-decoration: none;
 }
@@ -39,7 +39,7 @@ li{
   width: 100vw;
   height: 100vh;
   background-color: red;
-  opacity: 0.5;
+  opacity: 0;
 }
 .yuka{
   position: absolute;
@@ -47,7 +47,7 @@ li{
   width: 100vw;
   height: 30vh;
   background-color: blue;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .hibi{
@@ -57,7 +57,7 @@ li{
   width: 20vw;
   height: 70vh;
   background-color: blue;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 

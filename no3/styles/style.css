@@ -204,7 +204,7 @@ label[for="mapSet"]{
   width: 40vw;
   height: 40vw;
 
-  background-image: url("../pic3/map.jpg");
+  background-image: url("../pic3/map.png");
   background-size:cover;
   background-position:bottom;
   text-align: center;
@@ -228,8 +228,9 @@ a:hover {
   right: 4%;
   opacity: 0.5;
 }
-li{
+.door li{
   background-color: red;
+  opacity: 0;
   width: 9%;
   height: 17vw;
   margin: 0 4%;

@@ -9,7 +9,7 @@
 
 a.a{
   position:relative;
-  font-size: 4vw;
+  font-size: 3vw;
   color: #000000;
   text-decoration: none;
 }
@@ -53,23 +53,19 @@ li{
   position: absolute;
 }
 
-.ike{
-  position: absolute;
-  top: 25vh;
-  right: 30vw;
-  width: 40vw;
-  height: 50vh;
-  background-color: blue;
-  opacity: 0;
-}
-
-.back2{
+.umi{
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: blue;
   opacity: 0;
 }
-
+.back2{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  opacity: 0.5;
+}
 
 
