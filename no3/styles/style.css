@@ -154,6 +154,7 @@ label[for="mapSet"]{
   top: 5vw;
   right: 0;
   display:block;
+  display:none;
   font-size: 2vw;
   background:rgba(255, 0, 0, 0.432);
 }
