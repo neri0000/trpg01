@@ -3,7 +3,7 @@ window.onload = function() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
 
-var str = "…";
+var str = "";
 document.getElementById('write').innerHTML = str;
 document.getElementById('Iam').innerHTML = '<img src="../pic3/t1.png" alt="aa">';
 FlagSet()
