@@ -1,0 +1,116 @@
+:root{
+  --back: url("../pic3/1-1.jpg");
+}
+
+li,a{
+  font-size: 1vw;
+  line-height: 2;
+}
+p{
+  font-size: 1vw;
+  line-height: 2;
+}
+
+.home{
+  background-image: var(--back);
+  background-position:bottom;
+}
+
+a.a{
+  position:relative;
+  font-size: 4vw;
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+}
+
+.view{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 30%;
+}
+ul{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+li{
+  background-color: transparent;
+  display: inline-block;
+  
+}
+.left{
+  width: 0;
+  height: 0;
+  border-left: 3vw solid white;
+  border-top: 3vw solid transparent;
+  border-bottom: 3vw solid transparent;
+}
+
+.right{
+  width: 0;
+  height: 0;
+  border-right: 3vw solid white;
+  border-top: 3vw solid transparent;
+  border-bottom: 3vw solid transparent;
+}
+
+.items img{
+  z-index: 5;
+  position: absolute;
+}
+
+
+/*2-1*/
+
+
+
+.obj-3-1-m{
+  position: absolute;
+  top: 14vw;
+  left: 35vw;
+  opacity: 0.5;
+
+
+  
+  width: 20vw;
+  height: 20vw;
+  margin: 0 4%;
+  display: inline-block;
+}
+
+
+.obj-3-2-b{
+  position: absolute;
+  top: 14vw;
+  left: 35vw;
+  opacity: 0.5;
+
+
+  
+  width: 20vw;
+  height: 20vw;
+  margin: 0 4%;
+  display: inline-block;
+}
+
+.obj-3-3-k{
+  position: absolute;
+  top: 14vw;
+  left: 35vw;
+  opacity: 0.5;
+
+
+  
+  width: 20vw;
+  height: 20vw;
+  margin: 0 4%;
+  
+}
+
+
