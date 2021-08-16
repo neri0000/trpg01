@@ -51,7 +51,7 @@ li{
   width: 40vw;
   height: 30vh;
   background-color: blue;
-  opacity: 0.5;
+  opacity: 0;
 }
 .hiki{
   z-index: 6;
@@ -61,7 +61,7 @@ li{
   width: 12vw;
   height: 5vh;
   background-color: blue;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 
