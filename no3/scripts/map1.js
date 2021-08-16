@@ -9,6 +9,7 @@ document.getElementById('Iam').innerHTML = '<img src="../pic3/t1.png" alt="aa">'
 
 
 FlagSet()
+onoSet()
 }
 
 
@@ -18,6 +19,10 @@ var map2OP = [
   "私の部屋だ。",
   "数分前までここに居たはずなのだが、どうも雰囲気が変だ。",
   "自分の部屋のはずなのに、変な感覚を覚える。",
+  "そもそも何であの空間から此処に繋がってるんだ。",
+  "と、後ろを振り返ってみると。入ってきたはずの扉が消えていた。",
+  "一体、何がどうなっているんだ。",
+  "...探索をして情報を集めよう。",
 ] 
 
 var map2Max = map2OP.length;
@@ -34,7 +39,6 @@ var op = function () {
     map2 = sessionStorage.getItem('op');
   }
   if(map2 == 'end'){
-    console.log(map2);
     str = " ";
     document.getElementById('write').innerHTML = str;
   }
@@ -44,6 +48,9 @@ var op = function () {
 var yukaText = [
   "紙類が散らかっている。",
   "その一つ一つは、作品に成り損なったアイディア達だ。",
+  "書いている時は楽しかった。",
+  "最高の物語になると思った。",
+  "...でも現実は、誰にも評価されなかったんだ。",
 ] 
 
 var yukaMax = yukaText.length;
@@ -60,7 +67,6 @@ var Yuka = function () {
     yuka = sessionStorage.getItem('yuka');
   }
   if(yuka == 'end'){
-    console.log(yuka);
     str = " ";
     document.getElementById('write').innerHTML = str;
   }
@@ -72,10 +78,15 @@ var tableText = [
   "机だ。",
   "先ほどまで使っていた机だ。",
   "机の上には未完成の脚本が散乱している。その多くは黒く塗りつぶされており、とても読めたものではない。",
-  "「結局、没になったんだよね」",
+  "「結局、これも没になったんだよね」",
   "",
   "",
   "使い古されたシャーペン。これは誕生日に友人から貰ったものだ。",
+  "『強い筆圧でも、何度も書いても、芯が折れない』という宣伝文句で一時期流行ったモデル。",
+  "シンプルなデザインで、とても気に入っている。",
+  ".....",
+  "「『芯が折れない』....か」",
+  "",
   "ふと、机を調べていると脚本の下に固い感触があった。",
   "-スマホだ-",
   "画面を確認すると通知が大量に来ている。催促の内容ばかりだ。",
@@ -98,7 +109,6 @@ var table = function () {
     tableF = sessionStorage.getItem('table');
   }
   if(tableF == 'end'){
-    console.log(tableF);
     str = " ";
     document.getElementById('write').innerHTML = str;
   }
@@ -125,7 +135,6 @@ var tana = function () {
     tanaF = sessionStorage.getItem('tana');
   }
   if(tanaF == 'end'){
-    console.log(tanaF);
     str = " ";
     document.getElementById('write').innerHTML = str;
   }
@@ -157,7 +166,6 @@ var book1 = function () {
     book1F = sessionStorage.getItem('book1');
   }
   if(book1F == 'end'){
-    console.log(book1F);
     str = " ";
     document.getElementById('write').innerHTML = str;
   }
@@ -174,9 +182,11 @@ var book2Text = [
   "-場転を行う。大道具は衣装回収、舞台にボトルを配置する（ボトルの中身は手紙？：小道具と要相談）-",
   "「これは、初めて上映した作品だ。」",
   "",
-  "",
-  "",
-  "「大好きな作品だったけど、先生からは酷評だったんだよね」",
+  "大好きな作品だったけど、先生からは酷評だった。",
+  "「視聴者には感想用紙を書いてもらったけど、結局怖くてまだ読めてないや...」",
+  "...そもそも、その感想用紙は今どこにあるのだろう。",
+  "-情報が追加されました-",
+  "-入手した情報は右上から確認できます-",
 ] 
 var maxb2 = book2Text.length;
 var bo2 = 0;
@@ -190,11 +200,12 @@ var book2 = function () {
   if(bo2 == maxb2+1){
     sessionStorage.setItem('book2', 'end');
     book2F = sessionStorage.getItem('book2');
+    sessionStorage.setItem('get1', true);
   }
   if(book2F == 'end'){
-    console.log(book2F);
     str = " ";
     document.getElementById('write').innerHTML = str;
+    bo2++;
   }
 }
 
@@ -210,6 +221,16 @@ var rLeft = function () {
 }
 var lRight = function () {
   location.href = "map1-1.html";
+}
+
+var Left2 = function () {
+  var data = sessionStorage.getItem('newStage');
+  if(data == 'true'){
+    location.href = "map1-4.html";
+  }
+  else{
+    location.href = "map1-3.html";
+  }
 }
 
 
@@ -240,12 +261,12 @@ var bed = function () {
     sessionStorage.setItem('bed', 'end');
     bedF = sessionStorage.getItem('bed');
     document.querySelector('.ono').style.display = "none";
+    sessionStorage.setItem('get0', true);
   }
   if(bedF == 'end'){
-    console.log(bedF);
     str = " ";
-    sessionStorage.setItem('get0', true);
     document.getElementById('write').innerHTML = str;
+    bedc++;
   }
 }
 
@@ -275,7 +296,67 @@ var clock = function () {
     clocF = sessionStorage.getItem('clock');
   }
   if(clocF == 'end'){
-    console.log(clocF);
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+  }
+}
+
+//時計の引き出しのセリフ
+var hikiText = [
+  "鍵が掛かっている。",
+  "「えっ掛けた覚えないんだけど」",
+  "",
+  "",
+  "",
+  "",
+  "寝たいけれど、寝る暇がない。今日だってそうだった。",
+  "...今日って、何日だっけ？",
+  "なんだか意識がふわふわする。",
+] 
+var maxHiki = hikiText.length;
+var hikiC = 0;
+let hikiF = sessionStorage.getItem('hiki');
+
+var hiki = function () {
+  if(hikiF != 'end'){
+    document.getElementById('write').innerHTML = hikiText[hikiC];
+    hikiC++;
+  }
+  if(hikiC == maxHiki+1){
+    sessionStorage.setItem('hiki', 'end');
+    hikiF = sessionStorage.getItem('hiki');
+  }
+  if(hikiF == 'end'){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+  }
+}
+
+//壁のイラストのセリフ
+var iraText = [
+  "以前遊びに来た友人に「殺風景だ」と言われたので、絵を飾ってみた。",
+  "特に右下の「鮫」は一番のお気に入りだ。",
+  "その上段にある二枚は友人が書いた「花」とネットで購入した油絵「虚空」",
+  "そして左半分を占めるこれは...",
+  "？",
+  "「こんな絵だったけ」",
+  "「...」",
+  "まぁ、いいか。探索を続けよう。",
+] 
+var maxIra = iraText.length;
+var iraC = 0;
+let iraF = sessionStorage.getItem('irasuto');
+
+var irasuto = function () {
+  if(iraF != 'end'){
+    document.getElementById('write').innerHTML = iraText[iraC];
+    iraC++;
+  }
+  if(iraC == maxIra+1){
+    sessionStorage.setItem('irasuto', 'end');
+    iraF = sessionStorage.getItem('irasuto');
+  }
+  if(iraF == 'end'){
     str = " ";
     document.getElementById('write').innerHTML = str;
   }
@@ -323,7 +404,7 @@ var hibi = function () {
 
   let hibiItem = sessionStorage.getItem('get0');
   console.log(ono);
-  if(hibiItem == 'false'){
+  if((hibiItem == 'false')||(hibiItem == 'true')){
     document.getElementById('write').innerHTML = hibiT2[hibiC2];
     hibiC2++;
   }
@@ -351,7 +432,7 @@ var goText = [
   "圧倒的な解放感を前に、冷たく新鮮な空気を肺いっぱいに吸い込んだ。",
   "部屋に何故森？...という常識的な思考と、破壊行動に対する躊躇といった通常の感覚は",
   "この時、壁と共に脆く崩れ落ちていったのかもしれない。",
-  "",
+  "-mapが更新されました-",
 ] 
 var maxClock = goText.length;
 var goC = 0;
@@ -371,6 +452,7 @@ var go = function () {
     str = " ";
     document.getElementById('write').innerHTML = str;
     location.href = "../map2/map2-1.html";
-    document.querySelector('.mori').style.display = "block";
+    sessionStorage.setItem('map0', true);
+    sessionStorage.setItem('newStage', true);
   }
 }

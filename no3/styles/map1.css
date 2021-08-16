@@ -7,22 +7,6 @@
   background-position:bottom;
 }
 
-a.a{
-  position:relative;
-  font-size: 3vw;
-  color: #000000;
-  text-decoration: none;
-}
-a:hover {
-  color: red;
-}
-
-.view{
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: 30%;
-}
 ul{
   width: 100%;
   display: flex;
@@ -60,23 +44,26 @@ li{
   opacity: 0;
 }
 
+.irasuto{
+  position: absolute;
+  top: 0vh;
+  right: 35vw;
+  width: 40vw;
+  height: 30vh;
+  background-color: blue;
+  opacity: 0.5;
+}
+.hiki{
+  z-index: 6;
+  position: absolute;
+  bottom: 20vw;
+  right: 6vw;
+  width: 12vw;
+  height: 5vh;
+  background-color: blue;
+  opacity: 0.5;
+}
 
-.left{
-  width: 0;
-  height: 0;
-  border-left: 3vw solid white;
-  border-top: 3vw solid transparent;
-  border-bottom: 3vw solid transparent;
-  z-index: 5;
-}
-.right{
-  z-index: 5;
-  width: 0;
-  height: 0;
-  border-right: 3vw solid white;
-  border-top: 3vw solid transparent;
-  border-bottom: 3vw solid transparent;
-}
 
 .ono{
   display: block;
@@ -85,6 +72,7 @@ li{
   z-index: 5;
   position: absolute;
 }
+
 
 
 

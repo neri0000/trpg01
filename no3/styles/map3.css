@@ -7,22 +7,6 @@
   background-position:bottom;
 }
 
-a.a{
-  position:relative;
-  font-size: 3vw;
-  color: #000000;
-  text-decoration: none;
-}
-a:hover {
-  color: red;
-}
-
-.view{
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: 30%;
-}
 ul{
   width: 100%;
   display: flex;
@@ -33,20 +17,6 @@ li{
   background-color: transparent;
   display: inline-block;
   
-}
-.left{
-  width: 0;
-  height: 0;
-  border-left: 3vw solid white;
-  border-top: 3vw solid transparent;
-  border-bottom: 3vw solid transparent;
-}
-.right{
-  width: 0;
-  height: 0;
-  border-right: 3vw solid white;
-  border-top: 3vw solid transparent;
-  border-bottom: 3vw solid transparent;
 }
 .items img{
   z-index: 5;

@@ -11,12 +11,13 @@ window.onload = function() {
 //OPセリフ
 var text = [
   "..................",
-  "急がなければ。",
-  "完成させねば。",
+  "完成させなければ。",
   "はやる気持ちを無理やりに押さえつけ、努めて冷静にペンを走らせる。",
-  "-ドラマの脚本、私はその締め切りに追われている-",
+  "早く仕上げなければ。",
+  "-ドラマで使われる脚本、私はその締め切りに追われている-",
+  "",
   "『映像作家』。自ら望んだ道ではあるが、作品の肝となる脚本をたった一人で仕上げるという責任と重圧は、時間と共に重く心に圧し掛かる",
-  "本来であれば同じ班員と共同で仕上げるべきものを、半ば押し付けられるようにして一任されたのだ。",
+  "本来であれば同じ班員と共同で仕上げるべき脚本を、半ば押し付けられるようにして一任されたのだ。",
   "辛くないと言ったら嘘になる。同じ大学生として、不真面目な彼らに腹が立たないと言えば、それも嘘になる。",
   "それでも、こうして作業に没頭できているのは。やはり好きだからなのだろう。",
   "図書館、病院、森、...。作品は場所を限定しない。時空を超えて旅をしたり、気づけば世界を救っていたり、やろうと思えば思うように創造できる机上の世界。",
@@ -53,9 +54,12 @@ var text2 = [
   "「...ありゃ？」",
   "果たしてそこは、望んだ場所（寝室）ではなかった。",
   "そこは先ほどまでいた自室ではなく、ドアのみが立ち並ぶ無機質な空間。",
+  "目を擦る・頬を抓る。...といった王道なアクションは取らないが、自身が見る景色を疑った。",
+  "天井から吊るされた明かりがぼんやりと辺りを照らし、見渡す限り人はいない。",
   "振り返ってみても、そこには壁があるのみで入口らしき物は見当たらない。まるで寝室の扉の先が此処に繋がっていたかのような演出だ。",
-  "異常事態。極めて奇妙な体験をしている。",
-  "私の心はこの状況に楽しみを感じ始めていた。",
+  "異常事態。",
+  "それ即ち、極めて奇妙な体験。",
+  "私の心は、この状況に楽しみを感じ始めていた。",
 ] 
 
 var max2 = text2.length;
@@ -73,6 +77,9 @@ var myfunc2 = function () {
 var d1 = 0;
 var text3 = [
   "古めかしい木製の扉。",
+  "この扉を前にすると不思議と意識が遠のく。",
+  "眠気ではない。",
+  "それは吸い取られるような、何を失いかけるような、そんな怪しい感覚。",
   "鍵がかかっている。",
   " ",
   "ここはもう調べた。",
@@ -92,6 +99,9 @@ var door1 = function () {
 var d2 = 0;
 var d2text = [
   "さび付いた鉄の扉。",
+  "扉からは何と言えない匂いが漂っている。",
+  "錆は赤く変黒く色し、ぱっと見では血のように思える。",
+  "「なんだか、不気味だ...。」",
   "鍵がかかっている。",
   " ",
   "ここはもう調べた。",
@@ -115,6 +125,7 @@ var d3text = [
   "鍵はかかっていないようだ。",
   "",
   "扉の隙間に1枚のメモ用紙が挟まっている。",
+  "時計やテレビ？といった落書きのようなイラストが書かれている。イラスト間には仕切りがあり、空間を表しているようだ。",
   "「なんだこれ、何かの地図？」",
   "「...一応持っておこうかな」",
   "",
@@ -140,9 +151,9 @@ var d4text = [
   "鍵はかかっていないようだ。",
   "！！！",
   "中に入ろうとノブと握ると、強い悪寒がした。",
-  "強烈な焦燥感",
+  "強烈な焦燥感と、少しの喪失感",
   "",
-  "開けない方が良い気がする",
+  "今は、開けない方が良い気がする",
 ] 
 
 var D4 = d4text.length;
@@ -160,25 +171,29 @@ var door4 = function () {
 
 
 //アイテムリスト入手状況セット
-let ono;
 function FlagSet() {
   for(let i=0; i<itemlist.length; i++){
     var k = 'get'+i;
-    data = sessionStorage.getItem(k);
+    var data = sessionStorage.getItem(k);
     if(data == 'false'){
       sessionStorage.setItem(k, true);
-    }
-
-    ono = sessionStorage.getItem('get0');
-    if(ono == 'true'){
-      document.querySelector('.ono').style.display = "none";
     }
   }
 }
 
+//斧入手状況セット
+let ono;
+function onoSet() {
+  ono = sessionStorage.getItem('get0');
+  if(ono == 'true'){
+    document.querySelector('.ono').style.display = "none";
+  }
+}
+
+
 var itemlist = [
   "斧",
-  "滝君",
+  "”感想用紙”",
   "８mmフィルム",
   "バールのようなもの"
 ]
@@ -188,7 +203,6 @@ let address = 'HAVE' + count;
 
 var Item = function () {
   var data;
-  
   for(let i=0; i<itemlist.length; i++){
     var k = 'get'+i;
     data = sessionStorage.getItem(k);
@@ -198,6 +212,19 @@ var Item = function () {
       document.getElementById(address).innerHTML = itemlist[i];
       sessionStorage.setItem(k, false);
       count++;
+    }
+  }
+}
+
+
+var mapFlag = function () {
+  var data;
+  for(let i=0; i<2; i++){
+    var k = 'map'+i;
+    data = sessionStorage.getItem(k);
+    console.log(data);
+    if(data == 'true'){
+      document.querySelector('.mori').style.display = "block";
     }
   }
 }

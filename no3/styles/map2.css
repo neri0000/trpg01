@@ -7,22 +7,8 @@
   background-position:bottom;
 }
 
-a.a{
-  position:relative;
-  font-size: 4vw;
-  color: #000000;
-  text-decoration: none;
-}
-a:hover {
-  color: red;
-}
 
-.view{
-  margin: 0;
-  padding: 0;
-  position: relative;
-  top: 30%;
-}
+
 ul{
   width: 100%;
   display: flex;
@@ -33,20 +19,6 @@ li{
   background-color: transparent;
   display: inline-block;
   
-}
-.left{
-  width: 0;
-  height: 0;
-  border-left: 3vw solid white;
-  border-top: 3vw solid transparent;
-  border-bottom: 3vw solid transparent;
-}
-.right{
-  width: 0;
-  height: 0;
-  border-right: 3vw solid white;
-  border-top: 3vw solid transparent;
-  border-bottom: 3vw solid transparent;
 }
 .items img{
   z-index: 5;
@@ -70,6 +42,74 @@ li{
   background-color: blue;
   opacity: 0;
 }
+
+.back3{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
+  opacity: 0.2;
+}
+
+.sky{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 10vw;
+  background-color: aqua;
+  opacity: 0.2;
+}
+
+.bigBook{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 40vw;
+  background-color: burlywood;
+  opacity: 0.5;
+}
+
+.pen{
+  position: absolute;
+  top: 18vw;
+  left: 46vw;
+  width: 2vw;
+  height: 11vw;
+  background-color: blue;
+  opacity: 0.2;
+}
+
+.box{
+  position: absolute;
+  top: 28vw;
+  right: 25vw;
+  width: 5vw;
+  height: 5vw;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.film{
+  position: absolute;
+  top: 10vw;
+  right: 33vw;
+  width: 5vw;
+  height: 20vw;
+  background-color: goldenrod;
+  opacity: 0.3;
+}
+
+.eye{
+  position: absolute;
+  top: 16vw;
+  left: 16vw;
+  width: 5vw;
+  height: 10vw;
+  background-color: red;
+  opacity: 0.2;
+}
+
 
 
 
