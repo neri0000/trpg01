@@ -26,6 +26,7 @@ li{
 }
 
 .ike{
+  z-index: 6;
   position: absolute;
   top: 25vh;
   right: 30vw;
@@ -48,7 +49,7 @@ li{
   width: 100vw;
   height: 100vh;
   background-color: green;
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .sky{
@@ -57,59 +58,64 @@ li{
   width: 100vw;
   height: 10vw;
   background-color: aqua;
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .bigBook{
+  z-index: 6;
   position: absolute;
   top: 0;
   left: 0;
-  width: 40vw;
+  width: 35vw;
   height: 40vw;
   background-color: burlywood;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .pen{
+  z-index: 6;
   position: absolute;
   top: 18vw;
   left: 46vw;
   width: 2vw;
   height: 11vw;
   background-color: blue;
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .box{
+  z-index: 6;
   position: absolute;
   top: 28vw;
   right: 25vw;
   width: 5vw;
   height: 5vw;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .film{
+  z-index: 6;
   position: absolute;
   top: 10vw;
   right: 33vw;
   width: 5vw;
   height: 20vw;
   background-color: goldenrod;
-  opacity: 0.3;
+  opacity: 0;
 }
 
-.eye{
-  position: absolute;
-  top: 16vw;
-  left: 16vw;
-  width: 5vw;
-  height: 10vw;
-  background-color: red;
-  opacity: 0.2;
+.tv{
+  display: block;
+}
+.tv2{
+  display: none;
+}
+.tv4{
+  display: none;
 }
 
-
-
+.tape{
+  display: none;
+}
 

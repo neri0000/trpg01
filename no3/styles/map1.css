@@ -35,6 +35,7 @@ li{
 }
 
 .hibi{
+  z-index: 6;
   position: absolute;
   top: 0vh;
   right: 40vw;
@@ -69,10 +70,8 @@ li{
   display: block;
 }
 .items img{
-  z-index: 5;
   position: absolute;
 }
-
 
 
 

@@ -23,8 +23,50 @@
 
 
   <body class="dounyu">
-    <div class = "text" onclick="ed()">
-      <div id = write> </div>
+    <div class="home" style="--back: url(../pic3/ed2.png);" ></div>
+    <div class="umi" onclick="op3()"></div>
+      <div class="items">
+        <img onclick="bin1()" src="../pic3/bin1.png" width="8%"  style="right: 10vw; bottom:28vh;">
+        <img onclick="bin2()" src="../pic3/bin2.png" width="8%"  style="left: 5vw; bottom:10vh;">
+        <img onclick="bin3()" src="../pic3/bin3.png" width="8%"  style="right: 30vw; bottom:23vh;">
+        <img onclick="bin4()" src="../pic3/bin4.png" width="8%"  style="left: 15vw; bottom:25vh;">
+      </div>
+
+      
+
+      <div class = "text">
+        <div class="face" id = Iam></div>
+        <div class="say" id = write> </div>
+      </div>
+
+      <ul class="view">
+        <li onclick="LeftEd()" class="right2"></li>
+        <li></li>
+      </ul>
+
+
+      <label for="mapSet" onclick="mapFlag()">MAP</label>
+      <input type="checkbox" id="mapSet">
+      <div class="map">
+        <a class="a" href="../map1/map1-1.html" style="top:25vw; left:9vw;">room</a>
+        <a class="a mori" href="../map2/map2-1.html" style="top: 12vw; left:15vw;">forest</a>
+        <a class="a izumi" href="map3-1.html" style="top: -3vw; left:28vw;">spring</a>
+    </div>
+
+
+
+
+    <label for="menu" onclick="Item()">item</label>
+    <input type="checkbox" id="menu">
+    <div class="dropdown">
+      <ul class="have">
+        <li  id = HAVE1></li>
+        <li  id = HAVE2></li>
+        <li  id = HAVE3></li>
+        <li  id = HAVE4></li>
+        <li  id = HAVE5></li>
+        <li  id = HAVE6></li>
+      </ul>
     </div>
 　</body>
 </html>

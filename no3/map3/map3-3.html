@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <title>sonna</title>
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <link href="../styles/map3.css" rel="stylesheet" type="text/css">
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/map3.js"></script>
+    <script src="../scripts/ed.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700 rel=" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&family=Shippori+Mincho&family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+  </head>
+
+  <div id="loading"></div>
+
+
+  <body >
+    <div class="home2" id="buble" >
+
+      <div class = "edop" onclick="edback()"></div>
+
+      <div class = "text">
+        <div class="face" id = Iam></div>
+        <div class="say" id = write> </div>
+      </div>
+
+      <div class="dice" onclick="dice()">
+          <div class="dice2">
+            <div class="ans" id="output" ></div>
+            <div class="ans" id="hantei"></div>
+          </div>
+          <form>
+            <input class="diceButton" type="button" onclick="start()" value="ダイスを振る">
+        </form>
+      </div>
+
+      <div class="seconddice" onclick="dice2()">
+        <div class="dice2">
+          <div class="ans" id="output2" ></div>
+          <div class="ans" id="hantei2"></div>
+        </div>
+        <form>
+          <input class="diceButton2" type="button" onclick="start2()" value="ダイスを振る">
+      </form>
+    </div>
+
+    <div class="lastdice" onclick="dice3()">
+      <div class="dice2">
+        <div class="ans" id="output3" ></div>
+        <div class="ans" id="hantei3"></div>
+      </div>
+      <form>
+        <input class="diceButton3" type="button" onclick="start3()" value="ダイスを振る3">
+    </form>
+  </div>
+
+
+      <label class="map1" for="mapSet" onclick="mapFlag()">MAP</label>
+      <input type="checkbox" id="mapSet">
+      <div class="map">
+        <a class="a" href="../map1/map1-1.html" style="top:25vw; left:9vw;">room</a>
+        <a class="a mori" href="../map2/map2-1.html" style="top: 12vw; left:15vw;">forest</a>
+        <a class="a izumi" href="map3-1.html" style="top: -3vw; left:28vw;">spring</a>
+    </div>
+
+
+
+
+    <label class="item1" for="menu" onclick="Item()">item</label>
+    <input type="checkbox" id="menu">
+    <div class="dropdown">
+      <ul class="have">
+        <li  id = HAVE1></li>
+        <li  id = HAVE2></li>
+        <li  id = HAVE3></li>
+        <li  id = HAVE4></li>
+        <li  id = HAVE5></li>
+        <li  id = HAVE6></li>
+      </ul>
+    </div>
+      
+  </div>
+　</body>
+</html>

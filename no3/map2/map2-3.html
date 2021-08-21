@@ -7,7 +7,7 @@
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
     <link href="../styles/map2.css" rel="stylesheet" type="text/css">
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/map2.js"></script>
+    <script src="../scripts/map2-tape.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700 rel=" rel="stylesheet">
@@ -19,17 +19,16 @@
 
   <body>
     <div class="home2" style="--back: url(../pic3/map2-3.png);" >
-      <div class="back3" onclick="op2()"></div>
-      <div class="sky" onclick="op2()"></div>
-      <div class="bigBook" onclick="op2()"></div>
-      <div class="pen" onclick="op2()"></div>
-      <div class="box" onclick="op2()"></div>
-      <div class="film" onclick="op2()"></div>
-      <div class="eye" onclick="op2()"></div>
+      <div class="back3" onclick="back3()"></div>
+      <div class="sky" onclick="sky()"></div>
+      <div class="bigBook" onclick="bigBook()"></div>
+      <div class="pen" onclick="pen()"></div>
+      <div class="box" onclick="box()"></div>
+      <div class="film" onclick="film()"></div>
 
 
       <div class="items">
-        <img onclick="tv()" src="../pic3/tape.png" width="7%" style="left: 35vw; top:32vw;">
+        <img onclick="tape()" class="tape"  src="../pic3/tape.png" width="7%" style="left: 35vw; top:32vw;">
       </div>
 
       <div class = "text" onclick="op3()">
@@ -47,14 +46,20 @@
       <div class="map">
         <a class="a" href="../map1/map1-1.html" style="top:25vw; left:9vw;">room</a>
         <a class="a mori" href="map2-1.html" style="top: 12vw; left:15vw;">forest</a>
+        <a class="a izumi" href="../map3/map3-1.html" style="top: -3vw; left:28vw;">spring</a>
     </div>
 
     <label for="menu" onclick="Item()">item</label>
     <input type="checkbox" id="menu">
     <div class="dropdown">
-      <div class="have" id = HAVE1></div>
-      <div class="have" id = HAVE2></div>
-      <div class="have" id = HAVE3></div>
+      <ul class="have">
+        <li  id = HAVE1></li>
+        <li  id = HAVE2></li>
+        <li  id = HAVE3></li>
+        <li  id = HAVE4></li>
+        <li  id = HAVE5></li>
+        <li  id = HAVE6></li>
+      </ul>
     </div>
 
   </div>

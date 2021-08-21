@@ -80,19 +80,22 @@ var tableText = [
   "机の上には未完成の脚本が散乱している。その多くは黒く塗りつぶされており、とても読めたものではない。",
   "「結局、これも没になったんだよね」",
   "",
-  "",
-  "使い古されたシャーペン。これは誕生日に友人から貰ったものだ。",
-  "『強い筆圧でも、何度も書いても、芯が折れない』という宣伝文句で一時期流行ったモデル。",
-  "シンプルなデザインで、とても気に入っている。",
-  ".....",
-  "「『芯が折れない』....か」",
-  "",
   "ふと、机を調べていると脚本の下に固い感触があった。",
   "-スマホだ-",
   "画面を確認すると通知が大量に来ている。催促の内容ばかりだ。",
   "「.....」",
-  "",
   "スマホの電源を切った。",
+  "",
+  "",
+  "他に何か変わった所がないか机を調べているとふと、ペンが目についた。",
+  "使い古されたシャーペン。",
+  "これは確か、私の誕生日にプレゼントとして友人から貰ったものだ。",
+  "『強い筆圧でも、何度も書いても、芯が折れない』という宣伝文句で一時期流行ったモデル。",
+  "シンプルなデザインで、とても気に入っている。",
+  ".....",
+  "「『芯が折れない』....か」",
+  "-情報を追加しました-",
+  "-入手した情報は右上から確認できます-",
 ] 
 
 var maxT = tableText.length;
@@ -107,6 +110,7 @@ var table = function () {
   if(t == maxT+1){
     sessionStorage.setItem('table', 'end');
     tableF = sessionStorage.getItem('table');
+    sessionStorage.setItem('get2', true);
   }
   if(tableF == 'end'){
     str = " ";
@@ -177,12 +181,17 @@ var book2Text = [
   "『...そして、彼は泉に沈んだ。",
   "ゆっくりと、しかし確実に体は底へと落ちていく。足掻こうとは思わなかった、このまま泡となって消えてしまいたかったからだ。",
   "水面は揺らぎ、歪んだ日差しが水中を優しく照らしている。",
+  "「貴方はだれ？」",
+  "水中で彼女が問いかける。",
+  "（主人公がゆっくりと振り向く）",
+  "返事はない。回答もない。その代わりに彼は、優しい笑みを浮かべた。",
+  "それは泣きそうな笑みだった。",
   "青、水色、そして白。",
-  "意識と共に視界から色が、消えた。』",
-  "-場転を行う。大道具は衣装回収、舞台にボトルを配置する（ボトルの中身は手紙？：小道具と要相談）-",
+  "意識と共に視界から色が、消える。』",
+  "-暗転。場転を行う。大道具は衣装回収、舞台にボトルを配置する（ボトルの中身は手紙？：小道具と要相談）-",
   "「これは、初めて上映した作品だ。」",
   "",
-  "大好きな作品だったけど、先生からは酷評だった。",
+  "大好きな作品だったけど、評価はB。先生からは酷評だった。",
   "「視聴者には感想用紙を書いてもらったけど、結局怖くてまだ読めてないや...」",
   "...そもそも、その感想用紙は今どこにあるのだろう。",
   "-情報が追加されました-",
@@ -197,7 +206,7 @@ var book2 = function () {
     document.getElementById('write').innerHTML = book2Text[bo2];
     bo2++;
   }
-  if(bo2 == maxb2+1){
+  if((book2F != 'end')&&(bo2 == maxb2+1)){
     sessionStorage.setItem('book2', 'end');
     book2F = sessionStorage.getItem('book2');
     sessionStorage.setItem('get1', true);
@@ -257,7 +266,7 @@ var bed = function () {
     document.getElementById('write').innerHTML = bedText[bedc];
     bedc++;
   }
-  if(bedc == maxBed+1){
+  if((bedF != 'end')&&(bedc == maxBed+1)){
     sessionStorage.setItem('bed', 'end');
     bedF = sessionStorage.getItem('bed');
     document.querySelector('.ono').style.display = "none";
@@ -273,31 +282,60 @@ var bed = function () {
 //時計のセリフ
 var clockText = [
   "愛用の目覚まし時計だ。",
+  "しばらく眺めていると、何故か意識が遠のく。",
+  "それは眠りから覚めるときのような、強力な引力。",
+  "",
   "針が止まっている、故障だろうか。",
-  "",
-  "",
-  "",
-  "",
-  "寝たいけれど、寝る暇がない。今日だってそうだった。",
-  "...今日って、何日だっけ？",
-  "なんだか意識がふわふわする。",
+  "最後に時間を確認した時は深夜の2時だったはずなのだが、",
+  "この時計ではまるでデタラメな時刻を指している。",
+  "......。",
+  "何時だってどうでもいいよね。",
+] 
+var clockText2 = [
+  "『リリリリリリリリリリ！』",
+  "音は、此処から鳴っている。",
+  "針が止まっている、故障してるはずの目覚まし時計が鳴っている。",
+  "スヌーズや電源をいじっても音に変化はなく、耳が痛くなる。",
+  "最早、音を止めるには、”破壊”するしかないようだ。",
+  "しかし、",
+  "時計は、現実の表徴ともいわれる。",
+  "ならばこの目覚まし時計は、現実への懸け橋のようなもの。",
+  "「....」",
+  "-斧で目覚まし時計はを破壊しますか？-",
+  "-本当によろしいのですね？-",
+  "-次のクリックから描写が始まります。-",
 ] 
 var maxClock = clockText.length;
 var clocC = 0;
 let clocF = sessionStorage.getItem('clock');
 
+var maxClock2 = clockText2.length;
+var clocC2 = 0;
 var clock = function () {
-  if(clocF != 'end'){
-    document.getElementById('write').innerHTML = clockText[clocC];
-    clocC++;
+  let taki = sessionStorage.getItem('taki');
+  if(taki == 'end'){
+    document.getElementById('write').innerHTML = clockText2[clocC2];
+    clocC2++;
+    if(clocC2 == maxClock2+1){
+      str = " ";
+      document.getElementById('write').innerHTML = str;
+      location.href = "../ending/clock.html";
+    }
   }
-  if(clocC == maxClock+1){
-    sessionStorage.setItem('clock', 'end');
-    clocF = sessionStorage.getItem('clock');
-  }
-  if(clocF == 'end'){
-    str = " ";
-    document.getElementById('write').innerHTML = str;
+  else{
+    if(clocF != 'end'){
+      document.getElementById('write').innerHTML = clockText[clocC];
+      clocC++;
+    }
+    if(clocC == 7){
+      console.log(clocF);
+      sessionStorage.setItem('clock', 'end');
+      clocF = sessionStorage.getItem('clock');
+    }
+    if(clocF == 'end'){
+      str = " ";
+      document.getElementById('write').innerHTML = str;
+    }
   }
 }
 
@@ -305,21 +343,43 @@ var clock = function () {
 var hikiText = [
   "鍵が掛かっている。",
   "「えっ掛けた覚えないんだけど」",
-  "",
-  "",
-  "",
-  "",
-  "寝たいけれど、寝る暇がない。今日だってそうだった。",
-  "...今日って、何日だっけ？",
-  "なんだか意識がふわふわする。",
 ] 
+//時計の引き出しのセリフ（開錠）
+var hikiText2 = [
+  "鍵を使って引き出しを開けた。",
+  "",
+  "こんなもの仕舞ってたっけ？",
+  "「何かに使えるかもしれないし、持っておこう」",
+  "-リモコンを入手した。-",
+  "-小さな鍵を失った。-",
+] 
+
 var maxHiki = hikiText.length;
 var hikiC = 0;
 let hikiF = sessionStorage.getItem('hiki');
-
+//鍵入手
+let binF = sessionStorage.getItem('bin4');
+let hikiF2 = sessionStorage.getItem('hiki2');
 var hiki = function () {
+  if((binF == 'end')&&(hikiF2 != 'end')){
+    sessionStorage.setItem('hiki', 'start');
+    hikiF = sessionStorage.getItem('hiki');
+
+    hikiText　= hikiText2;
+    maxHiki = hikiText2.length;
+  }
+
   if(hikiF != 'end'){
     document.getElementById('write').innerHTML = hikiText[hikiC];
+    hikiC++;
+  }
+  if((hikiC == maxHiki+1)&&(binF == 'end')){
+    sessionStorage.setItem('hiki2', 'end');
+    hikiF2 = sessionStorage.getItem('hiki2');
+
+    sessionStorage.setItem('get5', 'no');
+    sessionStorage.removeItem('get5')
+    sessionStorage.setItem('get3', true);
     hikiC++;
   }
   if(hikiC == maxHiki+1){
@@ -330,15 +390,24 @@ var hiki = function () {
     str = " ";
     document.getElementById('write').innerHTML = str;
   }
+  if(hikiF2 == 'end'){
+    str = " ";
+    document.getElementById('write').innerHTML = str;
+  }
 }
+
+
+
+
 
 //壁のイラストのセリフ
 var iraText = [
   "以前遊びに来た友人に「殺風景だ」と言われたので、絵を飾ってみた。",
   "特に右下の「鮫」は一番のお気に入りだ。",
-  "その上段にある二枚は友人が書いた「花」とネットで購入した油絵「虚空」",
-  "そして左半分を占めるこれは...",
+  "自作である。",
+  "我ながらなかなか良い絵だ",
   "？",
+  "左にある絵に目を向ける。",
   "「こんな絵だったけ」",
   "「...」",
   "まぁ、いいか。探索を続けよう。",
@@ -374,9 +443,15 @@ var hibiText = [
   "「何かアイテムがあれば...」",
 ] 
 var hibiT2 = [
+  "部屋の一面が、ただの壁になっている。",
+  "「しかもヒビ入ってるなぁ」",
+  "ヒビの隙間からは冷たく湿った空気が流れてくる。",
+  "壁は薄い。強い衝撃を与えれば壊せそうだ。",
+  "",
   "「よし、この斧で」",
   "-斧を使って壁を破壊した-",
   "「どっこいせぇ！！！！！」",
+  "破壊行為により、「斧」が酷く汚れてしまった。",
 ] 
 var maxHibi = hibiText.length;
 var maxHibi2 = hibiT2.length;

@@ -6,6 +6,7 @@
     <title>sonna</title>
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
     <link href="../styles/map2.css" rel="stylesheet" type="text/css">
+    <script src="../scripts/Flag3.js"></script>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/map2.js"></script>
 
@@ -18,11 +19,13 @@
 
 
   <body>
-    <div class="home" style="--back: url(../pic3/2-2.jpg);" >
+    <div class="home" style="--back: url(../pic3/map2-1.jpg);" >
       <div class="back2" onclick="op2()"></div>
 
       <div class="items">
-        <img onclick="tv()" src="../pic3/tv.png" width="30%" style="left: 35%; top:30%;">
+        <img class="tv" onclick="tv()" src="../pic3/tv.png" width="30%" style="left: 35vw; top:15vw;">
+        <img class="tv2" onclick="tv2()" src="../pic3/tv2.png" width="27%" style="left: 37vw; top:17vw;">
+        <img class="tv4" onclick="tv4()" src="../pic3/tv4.png" width="26%" style="left: 37vw; top:17vw;">
       </div>
 
       <div class = "text" onclick="op()">
@@ -32,7 +35,7 @@
 
 
       <ul class="view">
-        <li></li>
+        <li onclick="Left()" class="right"></li>
         <li onclick="Right()" class="left"></li>
       </ul>
 
@@ -42,6 +45,7 @@
       <div class="map">
         <a class="a" href="../map1/map1-1.html" style="top:25vw; left:9vw;">room</a>
         <a class="a mori" href="map2-1.html" style="top: 12vw; left:15vw;">forest</a>
+        <a class="a izumi" href="../map3/map3-1.html" style="top: -3vw; left:28vw;">spring</a>
     </div>
     
 
@@ -49,9 +53,14 @@
       <label for="menu" onclick="Item()">item</label>
       <input type="checkbox" id="menu">
       <div class="dropdown">
-        <div class="have" id = HAVE1></div>
-        <div class="have" id = HAVE2></div>
-        <div class="have" id = HAVE3></div>
+        <ul class="have">
+          <li  id = HAVE1></li>
+          <li  id = HAVE2></li>
+          <li  id = HAVE3></li>
+          <li  id = HAVE4></li>
+          <li  id = HAVE5></li>
+          <li  id = HAVE6></li>
+        </ul>
       </div>
       
   </div>

@@ -60,6 +60,13 @@ var text2 = [
   "異常事態。",
   "それ即ち、極めて奇妙な体験。",
   "私の心は、この状況に楽しみを感じ始めていた。",
+  "-操作説明：探索について-",
+  "-操作はクリックのみです。-",
+  "-画面の気になる箇所をクリックすることで、その場所についての情報が開示されます。-",
+  "-また、調べた場所によっては『アイテム』を獲得することが出来ます。-",
+  "-アイテムは画面右上からいつでも確認することが出来ます。探索によって得られた情報もアイテムの対象になりますので、注意深く探索しましょう。-",
+  "-ステージ間の移動にはマップを使います。-",
+  "-現在は表示されていませんが、マップは画面右上に用意されますので移動時にお役立てください。-",
 ] 
 
 var max2 = text2.length;
@@ -181,21 +188,54 @@ function FlagSet() {
   }
 }
 
+
 //斧入手状況セット
 let ono;
 function onoSet() {
-  ono = sessionStorage.getItem('get0');
+  let ono = sessionStorage.getItem('get0');
   if(ono == 'true'){
     document.querySelector('.ono').style.display = "none";
   }
 }
 
 
+//テープの入手状況セット
+function tapeSet() {
+  let bigBookF = sessionStorage.getItem('bigBook');
+  let boxF = sessionStorage.getItem('box');
+  let filmF = sessionStorage.getItem('film');
+  let penF = sessionStorage.getItem('pen');
+  let skyF = sessionStorage.getItem('sky');
+  let back3F = sessionStorage.getItem('back3');
+
+  let tapeF = sessionStorage.getItem('tape');
+  if(tapeF == 'end'){
+    document.querySelector('.tape').style.display = "none";
+  }
+  else if((bigBookF == 'end')&&(boxF == 'end')&&(bigBookF == 'end')&&(filmF == 'end')&&(penF == 'end')&&(skyF == 'end')&&(back3F == 'end')){
+    document.querySelector('.tape').style.display = "block";
+  }
+}
+
+
+
+//ダイスロールイベント判定
+function takiSet() {
+  sessionStorage.setItem('taki', 'end');
+}
+function rollSet(){
+  sessionStorage.setItem('roll', 'true');
+}
+
+
+
 var itemlist = [
   "斧",
-  "”感想用紙”",
-  "８mmフィルム",
-  "バールのようなもの"
+  "”無くした感想用紙”",
+  "”誕生日プレゼント”",
+  "リモコン",
+  "白いテープ",
+  "小さな鍵"
 ]
 
 let count = 1;
@@ -216,18 +256,17 @@ var Item = function () {
   }
 }
 
-
 var mapFlag = function () {
-  var data;
-  for(let i=0; i<2; i++){
-    var k = 'map'+i;
-    data = sessionStorage.getItem(k);
-    console.log(data);
-    if(data == 'true'){
-      document.querySelector('.mori').style.display = "block";
-    }
+  var data0 = sessionStorage.getItem('map0');
+  var data1 = sessionStorage.getItem('map1');
+  if(data0 == 'true'){
+    document.querySelector('.mori').style.display = "block";
+  }
+  if(data1 == 'true'){
+    document.querySelector('.izumi').style.display = "block";
   }
 }
+
 
 
 
