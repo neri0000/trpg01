@@ -85,7 +85,7 @@ li{
 }
 
 .box{
-  z-index: 6;
+  z-index: 11;
   position: absolute;
   top: 28vw;
   right: 25vw;
@@ -117,7 +117,7 @@ li{
 }
 
 .tape{
-  z-index: 10;
+  z-index: 11;
   display: none;
 }
 
