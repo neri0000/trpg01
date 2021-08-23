@@ -20,6 +20,11 @@
   <body>
     <div class="home" style="--back: url(../pic3/map1-1.png);" >
 
+      <ul class="view">
+        <li onclick="Left2()" class="right"></li>
+        <li onclick="Right()" class="left"></li>
+      </ul>
+
       <div class="back" onclick="op()"></div>
       <div class="yuka" onclick="Yuka()"></div>
 
@@ -28,7 +33,7 @@
         <div class="say" id = write> </div>
       </div>
 
-      
+
       <div class="items">
         <img onclick="table()" src="../pic3/table.png" width="50%" style="left: 25vw; bottom:5vh;">
         <img onclick="tana()" src="../pic3/tana.png" width="18%"  style="right: 0vw; bottom:0vh;">
@@ -36,13 +41,6 @@
         <img onclick="book1()" src="../pic3/book2.png" width="8%"  style="left: 5vw; bottom:10vh;">
       </div>
 
-      
-
-
-      <ul class="view">
-        <li onclick="Left2()" class="right"></li>
-        <li onclick="Right()" class="left"></li>
-      </ul>
 
 
       <label for="mapSet" onclick="mapFlag()">MAP</label>

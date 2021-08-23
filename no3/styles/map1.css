@@ -20,16 +20,17 @@ li{
 }
 .back{
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  width: 100%;
+  height: 90%;
   background-color: red;
   opacity: 0;
 }
 .yuka{
   position: absolute;
   bottom: 0;
-  width: 100vw;
-  height: 30vh;
+  width: 100%;
+  height: 30%;
   background-color: blue;
   opacity: 0;
 }

@@ -66,11 +66,12 @@ h2 {
 .text {
   z-index: 10;
   background-color: lightgray;
-  position: relative;
-  top: 75%;
-  width: 60%;
+  position: absolute;
+  bottom: 5%;
+  left: 15vw;
+  width: 60vw;
   display: inline-block;
-  margin: 0%;
+  margin: auto;
   padding: 1% 5%;
   min-width: 120px;
   max-width: 100%;
@@ -106,7 +107,7 @@ h2 {
   margin: auto;
   padding: 0;
   position: relative;
-  top: 30%;
+  top: 40%;
   width: 95%;
 }
 
