@@ -297,7 +297,7 @@ let button = sessionStorage.getItem('btn');
 var dice = function () {
   button = sessionStorage.getItem('btn');
   if(button == 'end'){
-    if(dicenum == 1){
+    if((dicenum <= number)&&(dicenum == 1)){
       dice1kMax = criticalText.length;
       if(dice1F != 'end'){
         document.getElementById('write').innerHTML = criticalText[dice1C];
@@ -387,7 +387,7 @@ let button2 = sessionStorage.getItem('btn2');
 var dice2 = function () {
   button2 = sessionStorage.getItem('btn2');
   if(button2 == 'end'){
-    if(dicenum == 1){
+    if((dicenum <= number)&&(dicenum == 1)){
       dice2kMax = criticalText.length;
       if(dice2F != 'end'){
         document.getElementById('write').innerHTML = criticalText[dice2C];
